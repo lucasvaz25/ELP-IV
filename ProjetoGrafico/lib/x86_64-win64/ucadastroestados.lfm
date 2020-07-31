@@ -1,0 +1,62 @@
+inherited CadastroEstados: TCadastroEstados
+  Caption = 'Cadastro de Estados'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  object edt_Estado: TEdit[4]
+    Left = 40
+    Height = 23
+    Top = 112
+    Width = 352
+    CharCase = ecUppercase
+    TabOrder = 3
+  end
+  object edt_Pais: TEdit[5]
+    Left = 40
+    Height = 23
+    Top = 177
+    Width = 360
+    CharCase = ecUppercase
+    TabOrder = 4
+  end
+  object btn_Pesquisar: TButton[6]
+    Left = 416
+    Height = 25
+    Top = 175
+    Width = 75
+    Caption = '&Pesquisar'
+    OnClick = btn_PesquisarClick
+    TabOrder = 5
+  end
+  object lbl_Estado: TLabel[7]
+    Left = 40
+    Height = 15
+    Top = 93
+    Width = 35
+    Caption = 'Estado'
+    ParentColor = False
+  end
+  object Label3: TLabel[8]
+    Left = 40
+    Height = 15
+    Top = 160
+    Width = 21
+    Caption = 'País'
+    ParentColor = False
+  end
+  object edt_Sigla: TEdit[9]
+    Left = 416
+    Height = 23
+    Top = 112
+    Width = 56
+    CharCase = ecUppercase
+    TabOrder = 6
+  end
+  object lbl_Sigla: TLabel[10]
+    Left = 416
+    Height = 15
+    Top = 93
+    Width = 25
+    Caption = 'Sigla'
+    ParentColor = False
+  end
+end

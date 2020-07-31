@@ -1,0 +1,37 @@
+object Gerente: TGerente
+  Left = 451
+  Height = 364
+  Top = 201
+  Width = 596
+  Caption = 'Principal'
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.10.0'
+  object MainMenu1: TMainMenu
+    Left = 120
+    Top = 32
+    object MenuItem1: TMenuItem
+      Caption = '&Cadastros'
+      object MenuPaises: TMenuItem
+        Caption = '&Paises'
+        OnClick = MenuPaisesClick
+      end
+      object MenuEstados: TMenuItem
+        Caption = '&Estados'
+        OnClick = MenuEstadosClick
+      end
+      object MenuCidades: TMenuItem
+        Caption = '&Cidades'
+        OnClick = MenuCidadesClick
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'Sai&r'
+        OnClick = MenuItem4Click
+      end
+    end
+  end
+end

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="ProjetoGrafico"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0"/>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="11">
+      <Unit0>
+        <Filename Value="ProjetoGrafico.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="ugerente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Gerente"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uGerente"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="TelaHeranca\uconsulta.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Consulta"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uConsulta"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="TelaHeranca\ucadastro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Cadastro"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uCadastro"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="Telas\uconsultapaises.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ConsultaPaises"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uConsultaPaises"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="Telas\uconsultaestados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ConsultaEstados"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uConsultaEstados"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="Telas\uconsultacidades.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ConsultaCidades"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uConsultaCidades"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="Telas\ucadastropaises.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CadastroPaises"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uCadastroPaises"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CadastroEstados"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uCadastroEstados"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="Telas\ucadastrocidades.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CadastroCidades"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uCadastroCidades"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="Codigo\uinter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uInter"/>
+      </Unit10>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="ProjetoGrafico"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="TelaHeranca;Telas;Codigo"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

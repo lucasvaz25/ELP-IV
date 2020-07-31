@@ -1,0 +1,3 @@
+inherited CadastroPaises: TCadastroPaises
+  Caption = 'Cadastro de Países'
+end

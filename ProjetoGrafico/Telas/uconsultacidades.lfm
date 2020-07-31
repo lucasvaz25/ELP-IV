@@ -1,0 +1,5 @@
+inherited ConsultaCidades: TConsultaCidades
+  Caption = 'Consulta Cidades'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+end

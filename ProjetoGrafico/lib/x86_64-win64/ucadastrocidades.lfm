@@ -1,0 +1,62 @@
+inherited CadastroCidades: TCadastroCidades
+  Caption = 'Cadastro de Cidades'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  object edt_Cidade: TEdit[4]
+    Left = 40
+    Height = 23
+    Top = 112
+    Width = 336
+    CharCase = ecUppercase
+    TabOrder = 3
+  end
+  object edt_DDD: TEdit[5]
+    Left = 408
+    Height = 23
+    Top = 112
+    Width = 80
+    CharCase = ecUppercase
+    TabOrder = 4
+  end
+  object edt_Estado: TEdit[6]
+    Left = 40
+    Height = 23
+    Top = 192
+    Width = 336
+    CharCase = ecUppercase
+    TabOrder = 5
+  end
+  object btn_Pesquisar: TButton[7]
+    Left = 408
+    Height = 25
+    Top = 192
+    Width = 75
+    Caption = '&Pesquisar'
+    OnClick = btn_PesquisarClick
+    TabOrder = 6
+  end
+  object lbl_Cidade: TLabel[8]
+    Left = 40
+    Height = 15
+    Top = 96
+    Width = 37
+    Caption = 'Cidade'
+    ParentColor = False
+  end
+  object lbl_DDD: TLabel[9]
+    Left = 408
+    Height = 15
+    Top = 96
+    Width = 24
+    Caption = 'DDD'
+    ParentColor = False
+  end
+  object lbl_Estado: TLabel[10]
+    Left = 40
+    Height = 15
+    Top = 176
+    Width = 35
+    Caption = 'Estado'
+    ParentColor = False
+  end
+end

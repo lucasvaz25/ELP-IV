@@ -1,0 +1,35 @@
+inherited CadastroPaises: TCadastroPaises
+  Caption = 'Cadastro de Países'
+  object edt_Pais: TEdit[4]
+    Left = 40
+    Height = 23
+    Top = 96
+    Width = 360
+    CharCase = ecUppercase
+    TabOrder = 3
+  end
+  object lbl_Pais: TLabel[5]
+    Left = 40
+    Height = 15
+    Top = 80
+    Width = 21
+    Caption = 'País'
+    ParentColor = False
+  end
+  object edt_DDI: TEdit[6]
+    Left = 432
+    Height = 23
+    Top = 96
+    Width = 80
+    CharCase = ecUppercase
+    TabOrder = 4
+  end
+  object lbl_DDI: TLabel[7]
+    Left = 432
+    Height = 15
+    Top = 80
+    Width = 19
+    Caption = 'DDI'
+    ParentColor = False
+  end
+end

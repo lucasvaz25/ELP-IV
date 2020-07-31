@@ -1,0 +1,11 @@
+inherited ConsultaPaises: TConsultaPaises
+  Caption = 'Consulta de Paises'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  inherited btn_Novo: TButton
+    OnClick = btn_NovoClick
+  end
+  inherited btn_Alterar: TButton
+    Top = 328
+  end
+end

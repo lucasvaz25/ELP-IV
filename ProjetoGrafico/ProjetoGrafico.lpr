@@ -8,7 +8,8 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, uGerente, uConsulta, uCadastro, uConsultaPaises, uConsultaEstados,
-  uConsultaCidades, uCadastroPaises, uCadastroEstados, uCadastroCidades, uInter
+  uConsultaCidades, uCadastroPaises, uCadastroEstados, uCadastroCidades, uInter,
+  uPai, uPaises, uEstados, uCidades, uColecao, uColecaoPaises
   { you can add units after this };
 
 {$R *.res}

@@ -31,7 +31,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="11">
+    <Units Count="17">
       <Unit0>
         <Filename Value="ProjetoGrafico.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -40,6 +40,7 @@
         <Filename Value="ugerente.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Gerente"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uGerente"/>
       </Unit1>
@@ -47,6 +48,7 @@
         <Filename Value="TelaHeranca\uconsulta.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Consulta"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uConsulta"/>
       </Unit2>
@@ -54,6 +56,7 @@
         <Filename Value="TelaHeranca\ucadastro.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Cadastro"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uCadastro"/>
       </Unit3>
@@ -110,6 +113,36 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uInter"/>
       </Unit10>
+      <Unit11>
+        <Filename Value="Codigo\upai.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uPai"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="Codigo\upaises.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uPaises"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="Codigo\uestados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uEstados"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="Codigo\ucidades.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uCidades"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="Codigo\ucolecao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uColecao"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="Codigo\ucolecaopaises.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uColecaoPaises"/>
+      </Unit16>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

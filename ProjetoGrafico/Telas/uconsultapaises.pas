@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, uConsulta,
-  uCadastroPaises;
+  uCadastroPaises, uPaises;
 
 type
 
@@ -17,13 +17,15 @@ type
     procedure FormDestroy(Sender: TObject);
   private
     oCadastroPaises : TCadastroPaises;
+    oPais : Paises;
   public
     procedure Sair;      Override;
     procedure Novo;      Override;
     procedure Alterar;   Override;
     procedure Excluir;   Override;
     procedure Pesquisar; Override;
-
+    procedure SetFormCadastro( pObj : TObject ); Override;
+    procedure ConhecaObj( pObj : TObject );
   end;
 
 var
@@ -52,24 +54,51 @@ end;
 
 procedure TConsultaPaises.Novo;
 begin
-  inherited Novo;
+  oCadastroPaises.ConhecaObj( oPais );
+  oCadastroPaises.LimparEdt;
   oCadastroPaises.ShowModal;
+  inherited Novo;
 end;
 
 procedure TConsultaPaises.Alterar;
 begin
+  oCadastroPaises.ConhecaObj( oPais );
+  oCadastroPaises.LimparEdt;
+  oCadastroPaises.CarregaEdt;
+  oCadastroPaises.ShowModal;
   inherited Alterar;
-  oCadastroPaises.ShowModal
 end;
 
 procedure TConsultaPaises.Excluir;
+var
+  Aux : String;
 begin
+  oCadastroPaises.ConhecaObj( oPais );
+  oCadastroPaises.LimparEdt;
+  oCadastroPaises.CarregaEdt;
+  oCadastroPaises.BloqueiEdt;
+  Aux := oCadastroPaises.btn_Salvar.Caption;
+  oCadastroPaises.btn_Salvar.Caption := 'Excluir';
+  oCadastroPaises.ShowModal;
+  oCadastroPaises.btn_Salvar.Caption := Aux;
+  oCadastroPaises.DesbloqueiaEdt;
   inherited Excluir;
 end;
 
 procedure TConsultaPaises.Pesquisar;
 begin
   inherited Pesquisar;
+end;
+
+procedure TConsultaPaises.SetFormCadastro(pObj: TObject);
+begin
+  oCadastroPaises := TCadastroPaises( pObj );
+  inherited SetFormCadastro( oCadastroPaises ) ;
+end;
+
+procedure TConsultaPaises.ConhecaObj(pObj: TObject);
+begin
+  oPais := Paises( pObj );
 end;
 
 end.

@@ -11,8 +11,9 @@ object Cadastro: TCadastro
     Left = 40
     Height = 23
     Top = 40
-    Width = 80
+    Width = 48
     CharCase = ecUppercase
+    MaxLength = 6
     TabOrder = 0
   end
   object lbl_Codigo: TLabel
@@ -40,5 +41,29 @@ object Cadastro: TCadastro
     Caption = 'Sai&r'
     OnClick = btn_SairClick
     TabOrder = 2
+  end
+  object lbl_DataCadastro: TLabel
+    Left = 192
+    Height = 15
+    Top = 344
+    Width = 74
+    Caption = 'Data Cadastro'
+    ParentColor = False
+  end
+  object edt_DataCad: TEdit
+    Left = 192
+    Height = 23
+    Top = 360
+    Width = 80
+    Enabled = False
+    TabOrder = 3
+  end
+  object lbl_CamposObrigatorios: TLabel
+    Left = 16
+    Height = 15
+    Top = 360
+    Width = 121
+    Caption = '* Campos Obrigatórios'
+    ParentColor = False
   end
 end

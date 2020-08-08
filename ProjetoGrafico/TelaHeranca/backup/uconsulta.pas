@@ -20,6 +20,7 @@ type
     edt_Chave: TEdit;
     ListView1: TListView;
     procedure btn_AlterarClick(Sender: TObject);
+    procedure btn_ExcluirClick(Sender: TObject);
     procedure btn_NovoClick(Sender: TObject);
     procedure btn_PesquisarClick(Sender: TObject);
     procedure btn_SairClick(Sender: TObject);
@@ -31,7 +32,7 @@ type
     procedure Alterar;   Virtual;
     procedure Excluir;   virtual;
     procedure Pesquisar; Virtual;
-
+    procedure SetFormCadastro( pObj : TObject ); Virtual;
 
   end;
 
@@ -64,6 +65,11 @@ begin
   Self.Alterar;
 end;
 
+procedure TConsulta.btn_ExcluirClick(Sender: TObject);
+begin
+  Self.Excluir;;
+end;
+
 procedure TConsulta.Sair;
 begin
   Close;
@@ -85,6 +91,11 @@ begin
 end;
 
 procedure TConsulta.Pesquisar;
+begin
+
+end;
+
+procedure TConsulta.SetFormCadastro(pObj: TObject);
 begin
 
 end;

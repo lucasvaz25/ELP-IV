@@ -64,6 +64,7 @@ object Consulta: TConsulta
     Top = 327
     Width = 75
     Caption = '&Excluir'
+    OnClick = btn_ExcluirClick
     TabOrder = 6
   end
 end

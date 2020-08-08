@@ -9,7 +9,8 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, uGerente, uConsulta, uCadastro, uConsultaPaises, uConsultaEstados,
   uConsultaCidades, uCadastroPaises, uCadastroEstados, uCadastroCidades, uInter,
-  uPai, uPaises, uEstados, uCidades, uColecao, uColecaoPaises
+  uPai, uPaises, uEstados, uCidades, uColecao, uColecaoPaises, uColecaoEstados,
+  uColecaoCidades
   { you can add units after this };
 
 {$R *.res}

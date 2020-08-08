@@ -25,9 +25,9 @@ type
       constructor CrieObj;
       destructor Destrua_se;
 
-      procedure PecaDadosPaises;
-      procedure PecaDadosEstados;
-      procedure PecaDadosCidades;
+      procedure ConsultaPaises( pObj : TObject );
+      procedure ConsultaEstados( pObj : TObject );
+      procedure ConsultaCidades( pObj : TObject );
 
   end;
 
@@ -56,17 +56,18 @@ begin
 end;
 {$ENDREGION}
 {$REGION 'PECA_DADOS'}
- procedure Inter.PecaDadosPaises;
+ procedure Inter.ConsultaPaises( pObj : TObject );
 begin
+  aConsultaPaises.ConhecaObj( pObj );
   aConsultaPaises.ShowModal;
 end;
 
-procedure Inter.PecaDadosEstados;
+procedure Inter.ConsultaEstados( pObj : TObject );
 begin
   aConsultaEstados.ShowModal;
 end;
 
-procedure Inter.PecaDadosCidades;
+procedure Inter.ConsultaCidades( pObj : TObject );
 begin
   aConsultaCidades.ShowModal;
 end;

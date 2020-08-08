@@ -1,3 +1,66 @@
 inherited CadastroPaises: TCadastroPaises
   Caption = 'Cadastro de Países'
+  inherited edt_Codigo: TEdit
+    Width = 80
+    MaxLength = 0
+  end
+  inherited btn_Salvar: TButton
+    TabOrder = 4
+  end
+  inherited btn_Sair: TButton
+    TabOrder = 5
+  end
+  inherited edt_DataCad: TEdit
+    TabOrder = 6
+  end
+  object edt_Pais: TEdit[6]
+    Left = 40
+    Height = 23
+    Top = 96
+    Width = 360
+    CharCase = ecUppercase
+    MaxLength = 50
+    TabOrder = 1
+  end
+  object lbl_Pais: TLabel[7]
+    Left = 40
+    Height = 15
+    Top = 80
+    Width = 26
+    Caption = '*País'
+    ParentColor = False
+  end
+  object edt_DDI: TEdit[8]
+    Left = 432
+    Height = 23
+    Top = 96
+    Width = 80
+    CharCase = ecUppercase
+    MaxLength = 5
+    TabOrder = 2
+  end
+  object lbl_DDI: TLabel[9]
+    Left = 432
+    Height = 15
+    Top = 80
+    Width = 24
+    Caption = '*DDI'
+    ParentColor = False
+  end
+  object Edt_Sigla: TEdit[10]
+    Left = 552
+    Height = 23
+    Top = 96
+    Width = 80
+    MaxLength = 3
+    TabOrder = 3
+  end
+  object lbl_Sigla: TLabel[11]
+    Left = 552
+    Height = 15
+    Top = 80
+    Width = 30
+    Caption = '*Sigla'
+    ParentColor = False
+  end
 end

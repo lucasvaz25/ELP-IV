@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus,
-  uInter;
+  uInter, uPaises, uEstados, uCidades;
 
 type
 
@@ -28,6 +28,9 @@ type
     procedure MenuEstadosClick(Sender: TObject);
   private
     aInter : Inter;
+    oPais : Paises;
+    oEstado : Estados;
+    aCidade : Cidades;
   public
 
   end;
@@ -43,22 +46,28 @@ implementation
 
 procedure TGerente.FormCreate(Sender: TObject);
 begin
-  aInter := Inter.CrieObj;
+  aInter  := Inter.CrieObj;
+  oPais   := Paises.CrieObj;
+  oEstado := Estados.CrieObj;
+  aCidade := Cidades.CrieObj;
 end;
 
 procedure TGerente.FormDestroy(Sender: TObject);
 begin
   aInter.Destrua_se;
+  oPais.Destrua_se;
+  oEstado.Destrua_se;
+  aCidade.Destrua_se;
 end;
 
 procedure TGerente.MenuPaisesClick(Sender: TObject);
 begin
-  aInter.PecaDadosPaises;
+  aInter.ConsultaPaises( oPais );
 end;
 
 procedure TGerente.MenuCidadesClick(Sender: TObject);
 begin
-  aInter.PecaDadosCidades;
+  aInter.ConsultaCidades( aCidade );
 end;
 
 procedure TGerente.MenuItem4Click(Sender: TObject);
@@ -68,7 +77,7 @@ end;
 
 procedure TGerente.MenuEstadosClick(Sender: TObject);
 begin
-  aInter.PecaDadosEstados;
+  aInter.ConsultaEstados( oEstado );
 end;
 
 end.

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus,
-  uInter;
+  uInter, uPaises, uEstados, uCidades;
 
 type
 
@@ -15,19 +15,22 @@ type
   TGerente = class(TForm)
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
-    MenuItem2: TMenuItem;
-    MenuItem3: TMenuItem;
+    MenuPaises: TMenuItem;
+    MenuCidades: TMenuItem;
     MenuItem4: TMenuItem;
     N2: TMenuItem;
-    N1: TMenuItem;
+    MenuEstados: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure MenuItem2Click(Sender: TObject);
-    procedure MenuItem3Click(Sender: TObject);
+    procedure MenuPaisesClick(Sender: TObject);
+    procedure MenuCidadesClick(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
-    procedure N1Click(Sender: TObject);
+    procedure MenuEstadosClick(Sender: TObject);
   private
     aInter : Inter;
+    oPais : Paises;
+    oEstado : Estados;
+    aCidade : Cidades;
   public
 
   end;
@@ -43,22 +46,28 @@ implementation
 
 procedure TGerente.FormCreate(Sender: TObject);
 begin
-  aInter := Inter.CrieObj;
+  aInter  := Inter.CrieObj;
+  oPais   := Paises.CrieObj;
+  oEstado := Estados.CrieObj;
+  aCidade := Cidades.CrieObj;
 end;
 
 procedure TGerente.FormDestroy(Sender: TObject);
 begin
   aInter.Destrua_se;
+  oPais.Destrua_se;
+  oEstado.Destrua_se;
+  aCidade.Destrua_se;
 end;
 
-procedure TGerente.MenuItem2Click(Sender: TObject);
+procedure TGerente.MenuPaisesClick(Sender: TObject);
 begin
-  aInter.PecaDadosPaises;
+  aInter.ConsultaPaises( oPais );
 end;
 
-procedure TGerente.MenuItem3Click(Sender: TObject);
+procedure TGerente.MenuCidadesClick(Sender: TObject);
 begin
-  aInter.PecaDadosCidades;
+  aInter.ConsultaCidades();
 end;
 
 procedure TGerente.MenuItem4Click(Sender: TObject);
@@ -66,9 +75,9 @@ begin
   Close;
 end;
 
-procedure TGerente.N1Click(Sender: TObject);
+procedure TGerente.MenuEstadosClick(Sender: TObject);
 begin
-  aInter.PecaDadosEstados;
+  aInter.ConsultaEstados;
 end;
 
 end.

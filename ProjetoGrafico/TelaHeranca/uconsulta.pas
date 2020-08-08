@@ -32,7 +32,7 @@ type
     procedure Alterar;   Virtual;
     procedure Excluir;   virtual;
     procedure Pesquisar; Virtual;
-
+    procedure SetFormCadastro( pObj : TObject ); Virtual;
 
   end;
 
@@ -91,6 +91,11 @@ begin
 end;
 
 procedure TConsulta.Pesquisar;
+begin
+
+end;
+
+procedure TConsulta.SetFormCadastro(pObj: TObject);
 begin
 
 end;

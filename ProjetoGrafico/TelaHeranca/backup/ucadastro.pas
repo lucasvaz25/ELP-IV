@@ -53,7 +53,7 @@ end;
 
 procedure TCadastro.Salvar;
 begin
-
+  Edt_DataCad.Text := DateToStr( Now );
 end;
 
 procedure TCadastro.Sair;

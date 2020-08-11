@@ -4,14 +4,14 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="19">
+    <Units Count="20">
       <Unit0>
         <Filename Value="ProjetoGrafico.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="5"/>
         <CursorPos X="16" Y="12"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="43"/>
       </Unit0>
       <Unit1>
         <Filename Value="ugerente.pas"/>
@@ -20,9 +20,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uGerente"/>
-        <TopLine Value="68"/>
-        <CursorPos X="34" Y="80"/>
-        <UsageCount Value="38"/>
+        <TopLine Value="69"/>
+        <CursorPos X="30" Y="30"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -35,7 +35,7 @@
         <UnitName Value="uConsulta"/>
         <EditorIndex Value="1"/>
         <CursorPos X="91" Y="30"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -47,9 +47,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uCadastro"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="54"/>
-        <CursorPos X="104" Y="60"/>
-        <UsageCount Value="38"/>
+        <TopLine Value="48"/>
+        <CursorPos Y="56"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit3>
@@ -61,9 +61,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uConsultaPaises"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="5"/>
-        <CursorPos X="3" Y="69"/>
-        <UsageCount Value="38"/>
+        <TopLine Value="89"/>
+        <CursorPos Y="73"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit4>
@@ -75,9 +75,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uConsultaEstados"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="38"/>
-        <CursorPos X="32" Y="45"/>
-        <UsageCount Value="38"/>
+        <TopLine Value="90"/>
+        <CursorPos X="47" Y="31"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit5>
@@ -89,9 +89,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uConsultaCidades"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="16"/>
-        <CursorPos X="32" Y="44"/>
-        <UsageCount Value="38"/>
+        <TopLine Value="87"/>
+        <CursorPos X="19" Y="95"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit6>
@@ -102,11 +102,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uCadastroPaises"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="103"/>
-        <CursorPos X="20" Y="114"/>
-        <UsageCount Value="38"/>
+        <TopLine Value="61"/>
+        <CursorPos X="39" Y="67"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit7>
@@ -117,10 +116,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uCadastroEstados"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="37"/>
-        <CursorPos X="28" Y="48"/>
-        <UsageCount Value="38"/>
+        <TopLine Value="51"/>
+        <CursorPos X="36" Y="60"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit8>
@@ -132,9 +132,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uCadastroCidades"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="13"/>
-        <CursorPos X="19" Y="53"/>
-        <UsageCount Value="38"/>
+        <TopLine Value="47"/>
+        <CursorPos X="39" Y="59"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit9>
@@ -143,9 +143,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uInter"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="40"/>
-        <CursorPos X="50" Y="65"/>
-        <UsageCount Value="38"/>
+        <TopLine Value="63"/>
+        <CursorPos X="19" Y="73"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
@@ -153,9 +153,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uPai"/>
         <EditorIndex Value="14"/>
-        <TopLine Value="13"/>
-        <CursorPos X="21" Y="65"/>
-        <UsageCount Value="34"/>
+        <TopLine Value="38"/>
+        <CursorPos Y="46"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>
@@ -163,9 +163,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uPaises"/>
         <EditorIndex Value="15"/>
-        <TopLine Value="16"/>
+        <TopLine Value="12"/>
         <CursorPos X="7" Y="22"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit12>
       <Unit13>
@@ -173,9 +173,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uEstados"/>
         <EditorIndex Value="16"/>
-        <TopLine Value="14"/>
+        <TopLine Value="11"/>
         <CursorPos X="20" Y="46"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit13>
       <Unit14>
@@ -185,7 +185,7 @@
         <EditorIndex Value="17"/>
         <TopLine Value="17"/>
         <CursorPos X="63" Y="98"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit14>
       <Unit15>
@@ -195,7 +195,7 @@
         <EditorIndex Value="10"/>
         <TopLine Value="65"/>
         <CursorPos X="96" Y="69"/>
-        <UsageCount Value="31"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit15>
       <Unit16>
@@ -203,9 +203,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uColecaoPaises"/>
         <EditorIndex Value="11"/>
-        <TopLine Value="2"/>
         <CursorPos X="62" Y="55"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit16>
       <Unit17>
@@ -213,9 +212,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uColecaoEstados"/>
         <EditorIndex Value="12"/>
-        <TopLine Value="22"/>
+        <TopLine Value="21"/>
         <CursorPos X="59" Y="55"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit17>
       <Unit18>
@@ -225,130 +224,137 @@
         <EditorIndex Value="13"/>
         <TopLine Value="7"/>
         <CursorPos X="28" Y="69"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit18>
+      <Unit19>
+        <Filename Value="D:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3559"/>
+        <CursorPos Y="3566"/>
+        <UsageCount Value="10"/>
+      </Unit19>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="Codigo\ucolecao.pas"/>
-        <Caret Line="86" Column="36" TopLine="73"/>
+        <Filename Value="ugerente.pas"/>
+        <Caret Line="48" Column="21" TopLine="44"/>
       </Position1>
       <Position2>
-        <Filename Value="Codigo\ucolecaocidades.pas"/>
-        <Caret Line="19" Column="28" TopLine="6"/>
+        <Filename Value="ugerente.pas"/>
+        <Caret Line="60" Column="25" TopLine="50"/>
       </Position2>
       <Position3>
-        <Filename Value="TelaHeranca\ucadastro.pas"/>
-        <Caret Line="29" Column="40" TopLine="17"/>
+        <Filename Value="Codigo\uinter.pas"/>
+        <Caret Line="65" Column="50" TopLine="57"/>
       </Position3>
       <Position4>
-        <Filename Value="TelaHeranca\ucadastro.pas"/>
-        <Caret Line="68" Column="3" TopLine="63"/>
+        <Filename Value="ugerente.pas"/>
+        <Caret Line="51" Column="23" TopLine="35"/>
       </Position4>
       <Position5>
-        <Filename Value="TelaHeranca\ucadastro.pas"/>
-        <Caret Line="69" Column="3" TopLine="64"/>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <Caret Line="38" Column="46" TopLine="11"/>
       </Position5>
       <Position6>
-        <Filename Value="Telas\ucadastropaises.pas"/>
-        <Caret Line="28" Column="17" TopLine="17"/>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <Caret Line="139" Column="27" TopLine="106"/>
       </Position6>
       <Position7>
-        <Filename Value="Telas\ucadastropaises.pas"/>
-        <Caret Line="22" Column="60" TopLine="17"/>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <Caret Line="88" Column="13" TopLine="81"/>
       </Position7>
       <Position8>
-        <Filename Value="Telas\ucadastropaises.pas"/>
-        <Caret Line="27" Column="53" TopLine="17"/>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <Caret Line="107" Column="31" TopLine="106"/>
       </Position8>
       <Position9>
-        <Filename Value="TelaHeranca\ucadastro.pas"/>
-        <Caret Line="31" Column="39" TopLine="21"/>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <Caret Line="116" Column="36" TopLine="106"/>
       </Position9>
       <Position10>
-        <Filename Value="TelaHeranca\ucadastro.pas"/>
-        <Caret Line="32" Column="39" TopLine="22"/>
+        <Filename Value="Telas\ucadastrocidades.pas"/>
+        <Caret Line="53" Column="19" TopLine="13"/>
       </Position10>
       <Position11>
-        <Filename Value="TelaHeranca\ucadastro.pas"/>
-        <Caret Line="31" Column="39" TopLine="21"/>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <Caret Line="88" TopLine="88"/>
       </Position11>
       <Position12>
-        <Filename Value="Codigo\uinter.pas"/>
-        <Caret Line="28" Column="17" TopLine="15"/>
+        <Filename Value="Codigo\upai.pas"/>
+        <Caret Line="46" TopLine="38"/>
       </Position12>
       <Position13>
-        <Filename Value="Codigo\uinter.pas"/>
-        <Caret Line="29" Column="40" TopLine="19"/>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <Caret Line="88" TopLine="81"/>
       </Position13>
       <Position14>
-        <Filename Value="ugerente.pas"/>
-        <Caret Line="61" Column="17" TopLine="36"/>
+        <Filename Value="Telas\uconsultaestados.pas"/>
+        <Caret Line="29" Column="59" TopLine="24"/>
       </Position14>
       <Position15>
-        <Filename Value="ugerente.pas"/>
-        <Caret Line="71" Column="18" TopLine="59"/>
+        <Filename Value="Telas\uconsultaestados.pas"/>
+        <Caret Line="97" Column="30" TopLine="90"/>
       </Position15>
       <Position16>
-        <Filename Value="TelaHeranca\ucadastro.pas"/>
-        <Caret Line="81" Column="26" TopLine="54"/>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <Caret Line="88" TopLine="81"/>
       </Position16>
       <Position17>
-        <Filename Value="Telas\ucadastropaises.pas"/>
-        <Caret Line="51" Column="28" TopLine="47"/>
+        <Filename Value="ugerente.pas"/>
+        <Caret Line="80" Column="34" TopLine="62"/>
       </Position17>
       <Position18>
-        <Filename Value="Telas\ucadastropaises.pas"/>
-        <Caret Line="67" Column="14" TopLine="59"/>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <Caret Line="88" TopLine="78"/>
       </Position18>
       <Position19>
-        <Filename Value="Telas\ucadastropaises.pas"/>
-        <Caret Line="108" Column="25" TopLine="96"/>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <Caret Line="89" TopLine="78"/>
       </Position19>
       <Position20>
-        <Filename Value="Telas\uconsultapaises.pas"/>
-        <Caret Line="67" Column="22" TopLine="60"/>
+        <Filename Value="Telas\ucadastroestados.pas"/>
+        <Caret Line="90" Column="41" TopLine="82"/>
       </Position20>
       <Position21>
-        <Filename Value="Telas\uconsultapaises.pas"/>
-        <Caret Line="26" Column="46" TopLine="20"/>
+        <Filename Value="ugerente.pas"/>
+        <Caret Line="17" Column="110" TopLine="14"/>
       </Position21>
       <Position22>
-        <Filename Value="TelaHeranca\uconsulta.pas"/>
-        <Caret Line="35" Column="46" TopLine="24"/>
+        <Filename Value="ugerente.pas"/>
+        <Caret Line="30" Column="30" TopLine="57"/>
       </Position22>
       <Position23>
-        <Filename Value="Telas\uconsultapaises.pas"/>
-        <Caret Line="20" Column="20" TopLine="15"/>
+        <Filename Value="Telas\uconsultacidades.pas"/>
+        <Caret Line="28" Column="56" TopLine="20"/>
       </Position23>
       <Position24>
-        <Filename Value="Telas\ucadastropaises.pas"/>
-        <Caret Line="32" Column="40" TopLine="19"/>
+        <Filename Value="Telas\ucadastrocidades.pas"/>
+        <Caret Line="36" Column="49" TopLine="29"/>
       </Position24>
       <Position25>
         <Filename Value="ugerente.pas"/>
-        <Caret Line="48" Column="21" TopLine="44"/>
+        <Caret Line="30" Column="30" TopLine="69"/>
       </Position25>
       <Position26>
-        <Filename Value="ugerente.pas"/>
-        <Caret Line="60" Column="25" TopLine="50"/>
+        <Filename Value="Telas\uconsultacidades.pas"/>
+        <Caret Line="9" Column="22"/>
       </Position26>
       <Position27>
-        <Filename Value="Telas\uconsultapaises.pas"/>
-        <Caret Line="9" Column="27" TopLine="19"/>
+        <Filename Value="Telas\ucadastrocidades.pas"/>
+        <Caret Line="36" Column="22" TopLine="34"/>
       </Position27>
       <Position28>
-        <Filename Value="Telas\uconsultapaises.pas"/>
-        <Caret Line="69" Column="3" TopLine="85"/>
+        <Filename Value="Telas\uconsultacidades.pas"/>
+        <Caret Line="79" Column="27" TopLine="71"/>
       </Position28>
       <Position29>
-        <Filename Value="Codigo\uinter.pas"/>
-        <Caret Line="65" Column="50" TopLine="57"/>
+        <Filename Value="Telas\uconsultacidades.pas"/>
+        <Caret Line="95" Column="19" TopLine="87"/>
       </Position29>
       <Position30>
-        <Filename Value="ugerente.pas"/>
-        <Caret Line="51" Column="23" TopLine="35"/>
+        <Filename Value="Telas\ucadastrocidades.pas"/>
+        <Caret Line="94" Column="41" TopLine="84"/>
       </Position30>
     </JumpHistory>
     <RunParams>

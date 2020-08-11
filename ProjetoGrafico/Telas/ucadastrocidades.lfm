@@ -2,61 +2,70 @@ inherited CadastroCidades: TCadastroCidades
   Caption = 'Cadastro de Cidades'
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  object edt_Cidade: TEdit[4]
+  inherited btn_Salvar: TButton
+    TabOrder = 5
+  end
+  inherited btn_Sair: TButton
+    TabOrder = 6
+  end
+  inherited edt_DataCad: TEdit
+    TabOrder = 7
+  end
+  object edt_Cidade: TEdit[7]
     Left = 40
     Height = 23
     Top = 112
     Width = 336
     CharCase = ecUppercase
-    TabOrder = 3
+    TabOrder = 1
   end
-  object edt_DDD: TEdit[5]
+  object edt_DDD: TEdit[8]
     Left = 408
     Height = 23
     Top = 112
     Width = 80
     CharCase = ecUppercase
-    TabOrder = 4
+    TabOrder = 2
   end
-  object edt_Estado: TEdit[6]
+  object edt_Estado: TEdit[9]
     Left = 40
     Height = 23
     Top = 192
     Width = 336
     CharCase = ecUppercase
-    TabOrder = 5
+    TabOrder = 3
   end
-  object btn_Pesquisar: TButton[7]
+  object btn_Pesquisar: TButton[10]
     Left = 408
     Height = 25
     Top = 192
     Width = 75
     Caption = '&Pesquisar'
     OnClick = btn_PesquisarClick
-    TabOrder = 6
+    TabOrder = 4
   end
-  object lbl_Cidade: TLabel[8]
+  object lbl_Cidade: TLabel[11]
     Left = 40
     Height = 15
     Top = 96
-    Width = 37
-    Caption = 'Cidade'
+    Width = 42
+    Caption = '*Cidade'
     ParentColor = False
   end
-  object lbl_DDD: TLabel[9]
+  object lbl_DDD: TLabel[12]
     Left = 408
     Height = 15
     Top = 96
-    Width = 24
-    Caption = 'DDD'
+    Width = 29
+    Caption = '*DDD'
     ParentColor = False
   end
-  object lbl_Estado: TLabel[10]
+  object lbl_Estado: TLabel[13]
     Left = 40
     Height = 15
     Top = 176
-    Width = 35
-    Caption = 'Estado'
+    Width = 40
+    Caption = '*Estado'
     ParentColor = False
   end
 end

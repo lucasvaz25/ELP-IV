@@ -1,5 +1,5 @@
 inherited ConsultaCidades: TConsultaCidades
   Caption = 'Consulta Cidades'
-  ClientHeight = 0
-  ClientWidth = 0
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
 end

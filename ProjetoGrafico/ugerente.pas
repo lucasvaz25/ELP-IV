@@ -18,7 +18,7 @@ type
     MenuPaises: TMenuItem;
     MenuCidades: TMenuItem;
     MenuItem4: TMenuItem;
-    N2: TMenuItem;
+    MenuItem3: TMenuItem;
     MenuEstados: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -79,6 +79,7 @@ procedure TGerente.MenuEstadosClick(Sender: TObject);
 begin
   aInter.ConsultaEstados( oEstado );
 end;
+
 
 end.
 

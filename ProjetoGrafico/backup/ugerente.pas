@@ -67,7 +67,7 @@ end;
 
 procedure TGerente.MenuCidadesClick(Sender: TObject);
 begin
-  aInter.ConsultaCidades();
+  aInter.ConsultaCidades( aCidade );
 end;
 
 procedure TGerente.MenuItem4Click(Sender: TObject);
@@ -77,8 +77,9 @@ end;
 
 procedure TGerente.MenuEstadosClick(Sender: TObject);
 begin
-  aInter.ConsultaEstados;
+  aInter.ConsultaEstados( oEstado );
 end;
+
 
 end.
 

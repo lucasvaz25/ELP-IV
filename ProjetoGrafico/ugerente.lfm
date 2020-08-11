@@ -25,7 +25,7 @@ object Gerente: TGerente
         Caption = '&Cidades'
         OnClick = MenuCidadesClick
       end
-      object N2: TMenuItem
+      object MenuItem3: TMenuItem
         Caption = '-'
       end
       object MenuItem4: TMenuItem

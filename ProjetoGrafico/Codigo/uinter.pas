@@ -64,11 +64,13 @@ end;
 
 procedure Inter.ConsultaEstados( pObj : TObject );
 begin
+  aConsultaEstados.ConhecaObj( pObj );
   aConsultaEstados.ShowModal;
 end;
 
 procedure Inter.ConsultaCidades( pObj : TObject );
 begin
+  aConsultaCidades.ConhecaObj( pObj );
   aConsultaCidades.ShowModal;
 end;
 

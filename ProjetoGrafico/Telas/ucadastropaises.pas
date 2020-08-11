@@ -43,7 +43,6 @@ implementation
 
 procedure TCadastroPaises.Salvar;
 begin
-  inherited Salvar;
   if Edt_Pais.Text = EmptyStr then
   begin
     ShowMessage('Campo País é obrigatório!');
@@ -65,7 +64,7 @@ begin
     oPais.SetPais( Edt_Pais.Text );
     oPais.SetDDI( Edt_DDI.Text);
     oPais.SetSigla( Edt_Sigla.Text );
-    oPais.SetDataCad( Edt_DataCad.Text );
+    oPais.SetDataCad( DateToStr( Now ) );
     inherited Salvar;
   end;
 end;

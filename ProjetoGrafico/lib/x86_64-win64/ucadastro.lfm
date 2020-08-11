@@ -25,7 +25,7 @@ object Cadastro: TCadastro
     ParentColor = False
   end
   object btn_Salvar: TButton
-    Left = 488
+    Left = 536
     Height = 25
     Top = 360
     Width = 75

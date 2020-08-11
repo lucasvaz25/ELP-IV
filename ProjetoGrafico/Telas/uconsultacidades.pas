@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, uConsulta,
-  uCadastroCidades;
+  uCadastroCidades, uCidades;
 
 type
 
@@ -17,12 +17,15 @@ type
     procedure FormDestroy(Sender: TObject);
   private
     oCadastroCidades : TCadastroCidades;
+    aCidade : Cidades;
   public
     procedure Sair;      Override;
     procedure Novo;      Override;
     procedure Alterar;   Override;
     procedure Excluir;   Override;
     procedure Pesquisar; Override;
+    procedure SetFormCadastro( pObj : TObject ); Override;
+    procedure ConhecaObj( pObj : TObject );
   end;
 
 var
@@ -51,24 +54,51 @@ end;
 
 procedure TConsultaCidades.Novo;
 begin
-  inherited Novo;
+  oCadastroCidades.ConhecaObj( aCidade );
+  oCadastroCidades.LimparEdt;
   oCadastroCidades.ShowModal;
+  inherited Novo;
 end;
 
 procedure TConsultaCidades.Alterar;
 begin
-  inherited Alterar;
+  oCadastroCidades.ConhecaObj( aCidade );
+  oCadastroCidades.LimparEdt;
+  oCadastroCidades.CarregaEdt;
   oCadastroCidades.ShowModal;
+  inherited Alterar;
 end;
 
 procedure TConsultaCidades.Excluir;
+var
+  Aux : String;
 begin
+  oCadastroCidades.ConhecaObj( aCidade );
+  oCadastroCidades.LimparEdt;
+  oCadastroCidades.CarregaEdt;
+  oCadastroCidades.BloqueiEdt;
+  Aux := oCadastroCidades.btn_Salvar.Caption;
+  oCadastroCidades.btn_Salvar.Caption := 'Excluir';
+  oCadastroCidades.ShowModal;
+  oCadastroCidades.btn_Salvar.Caption := Aux;
+  oCadastroCidades.DesbloqueiaEdt;
   inherited Excluir;
 end;
 
 procedure TConsultaCidades.Pesquisar;
 begin
   inherited Pesquisar;
+end;
+
+procedure TConsultaCidades.SetFormCadastro(pObj: TObject);
+begin
+  oCadastroCidades := TCadastroCidades( pObj );
+  inherited SetFormCadastro( oCadastroCidades );
+end;
+
+procedure TConsultaCidades.ConhecaObj(pObj: TObject);
+begin
+  aCidade := Cidades( pObj );
 end;
 
 end.

@@ -1,4 +1,5 @@
 inherited ConsultaEstados: TConsultaEstados
   Caption = 'Consulta de Estados'
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
 end

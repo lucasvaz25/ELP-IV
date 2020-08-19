@@ -56,6 +56,7 @@ end;
 
 procedure TCadastroCidades.btn_PesquisarClick(Sender: TObject);
 begin
+  aConsultaEstados.ConhecaObj( oEstado );
   aConsultaEstados.ShowModal;
 end;
 

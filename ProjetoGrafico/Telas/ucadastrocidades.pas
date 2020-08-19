@@ -58,6 +58,7 @@ procedure TCadastroCidades.btn_PesquisarClick(Sender: TObject);
 begin
   aConsultaEstados.ConhecaObj( oEstado );
   aConsultaEstados.ShowModal;
+  edt_Estado.Text := oEstado.GetEstado;
 end;
 
 procedure TCadastroCidades.FormDestroy(Sender: TObject);

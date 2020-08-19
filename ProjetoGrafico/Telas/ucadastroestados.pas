@@ -59,6 +59,7 @@ procedure TCadastroEstados.btn_PesquisarClick(Sender: TObject);
 begin
   aConsultaPaises.ConhecaObj( oPais ) ;
   aConsultaPaises.ShowModal;
+  edt_Pais.Text := oPais.GetPais;
 end;
 
 procedure TCadastroEstados.FormDestroy(Sender: TObject);

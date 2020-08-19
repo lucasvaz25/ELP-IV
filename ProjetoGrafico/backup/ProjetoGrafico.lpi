@@ -31,7 +31,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="19">
+    <Units Count="21">
       <Unit0>
         <Filename Value="ProjetoGrafico.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -153,6 +153,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uColecaoCidades"/>
       </Unit18>
+      <Unit19>
+        <Filename Value="Codigo\ucontroller.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uController"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="Codigo\udao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uDAO"/>
+      </Unit20>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

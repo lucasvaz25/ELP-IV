@@ -12,8 +12,13 @@ object Cadastro: TCadastro
     Height = 23
     Top = 40
     Width = 48
+    Alignment = taRightJustify
+    BidiMode = bdRightToLeft
     CharCase = ecUppercase
+    Enabled = False
     MaxLength = 6
+    ParentBidiMode = False
+    ReadOnly = True
     TabOrder = 0
   end
   object lbl_Codigo: TLabel

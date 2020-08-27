@@ -39,12 +39,12 @@ implementation
 
 procedure TConsultaCidades.FormCreate(Sender: TObject);
 begin
-  oCadastroCidades := TCadastroCidades.Create(nil);
+
 end;
 
 procedure TConsultaCidades.FormDestroy(Sender: TObject);
 begin
-  oCadastroCidades.FreeInstance;
+
 end;
 
 procedure TConsultaCidades.Sair;
@@ -92,7 +92,7 @@ end;
 
 procedure TConsultaCidades.SetFormCadastro(pObj: TObject);
 begin
-  oCadastroCidade := TCadastroCidades( pObj );
+  oCadastroCidades := TCadastroCidades( pObj );
   inherited SetFormCadastro( oCadastroCidades );
 end;
 

@@ -24,12 +24,13 @@ type
   private
 
   public
-    procedure Salvar;         Virtual;
-    procedure Sair;           Virtual;
-    procedure LimparEdt;      Virtual;
-    procedure CarregaEdt;     Virtual;
-    procedure BloqueiEdt;     Virtual;
-    procedure DesbloqueiaEdt; Virtual;
+    procedure Salvar; virtual;
+    procedure Sair; virtual;
+    procedure LimparEdt; virtual;
+    procedure CarregaEdt; virtual;
+    procedure BloqueiEdt; virtual;
+    procedure DesbloqueiaEdt; virtual;
+    procedure ConhecaObj(pObj: TObject; pCtrl: TObject); override;
   end;
 
 var
@@ -53,7 +54,7 @@ end;
 
 procedure TCadastro.Salvar;
 begin
-  Edt_DataCad.Text := DateToStr( Now );
+
 end;
 
 procedure TCadastro.Sair;
@@ -63,7 +64,7 @@ end;
 
 procedure TCadastro.LimparEdt;
 begin
-  Self.Edt_Codigo.Clear;
+  Self.Edt_Codigo.Text := '0';
 end;
 
 procedure TCadastro.CarregaEdt;
@@ -73,12 +74,17 @@ end;
 
 procedure TCadastro.BloqueiEdt;
 begin
-  Self.Edt_Codigo.Enabled:= False;
+  Self.Edt_Codigo.Enabled := False;
 end;
 
 procedure TCadastro.DesbloqueiaEdt;
 begin
   Self.Edt_Codigo.Enabled := True;
+end;
+
+procedure TCadastro.ConhecaObj(pObj: TObject; pCtrl: TObject);
+begin
+
 end;
 
 end.

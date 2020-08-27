@@ -6,58 +6,87 @@ interface
 
 uses
   Classes, SysUtils, uColecao, uCidades;
+
 type
 
   { ColecaoCidades }
 
-  ColecaoCidades = Class ( Colecao )
-    private
-    protected
-    public
-      function Pesquisa( pChave : String; pQuero : Boolean ): Integer;
-      procedure SalvaArq;
-      procedure LerArq;
+  ColecaoCidades = class(Colecao)
+  private
+  protected
+  public
+    constructor CrieObj; override;
+    destructor Destrua_se; override;
+    function Pesquisa(pChave: string; pQuero: boolean): integer;
+    procedure SalvaArq;
+    procedure LerArq;
   end;
 
 implementation
 
 { ColecaoCidades }
 
-function ColecaoCidades.Pesquisa(pChave: String; pQuero: Boolean): Integer;
+constructor ColecaoCidades.CrieObj;
+begin
+  inherited;
+  Self.LerArq;
+end;
+
+destructor ColecaoCidades.Destrua_se;
+begin
+  Self.SalvaArq;
+  inherited;
+end;
+
+function ColecaoCidades.Pesquisa(pChave: string; pQuero: boolean): integer;
 var
-  I : Integer;
+  I: integer;
 begin
   if VerColVazia then
     Result := 1
   else
   begin
     I := 1;
-    While ( I <= Tam ) and ( pChave > Cidades( Item[ I ] ).GetCidade ) do
+    while (I <= Tam) and (pChave > Cidades(Item[I]).GetCidade) do
       I := I + 1;
     if pQuero then
     begin
       if I > Tam then
         Result := 0
       else
-        if pChave = Cidades( Item[ I ] ).GetCidade then
-          Result := I
-        else
-          Result := 0
-    end
-    else
-      if I > Tam then
+      if pChave = Cidades(Item[I]).GetCidade then
         Result := I
       else
-        if pChave = Cidades( Item[ I ] ).GetCidade then
-          Result := 0
-        else
-          Result := I;
+        Result := 0;
+    end
+    else
+    if I > Tam then
+      Result := I
+    else
+    if pChave = Cidades(Item[I]).GetCidade then
+      Result := 0
+    else
+      Result := I;
   end;
 end;
 
 procedure ColecaoCidades.SalvaArq;
+var
+  Arq: TextFile;
+  I: integer;
 begin
-
+  Assign(Arq, 'Cidades.Dat');
+  Rewrite(Arq);
+  for I := 1 to Tam do
+  begin
+    WriteLn(Arq, Cidades(Item[I]).GetCodigo);
+    WriteLn(Arq, Cidades(Item[I]).GetCidade);
+    WriteLn(Arq, Cidades(Item[I]).GetDDD);
+    WriteLn(Arq, Cidades(Item[I]).GetSigla);
+    WriteLn(Arq, Cidades(Item[I]).GetoEstado.GetEstado);
+    WriteLn(Arq, Cidades(Item[I]).GetDataCad);
+  end;
+  Close(Arq);
 end;
 
 procedure ColecaoCidades.LerArq;
@@ -66,4 +95,3 @@ begin
 end;
 
 end.
-

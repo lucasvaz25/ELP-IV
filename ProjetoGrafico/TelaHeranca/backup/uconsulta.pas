@@ -33,6 +33,8 @@ type
     procedure Excluir;   virtual;
     procedure Pesquisar; Virtual;
     procedure SetFormCadastro( pObj : TObject ); Virtual;
+    procedure ConhecaObj(pObj: TObject; pCtrl: TObject);   Virtual;
+    procedure CarregaListView;  Virtual;
 
   end;
 

@@ -6,27 +6,28 @@ interface
 
 uses
   Classes, SysUtils, uPai;
+
 type
 
   { Paises }
 
-  Paises = Class (Pai)
-    private
-    protected
-      Pais : String[50];
-      DDI  : String[5];
-      Sigla: String[3];
-    public
-      constructor CrieObj;
-      destructor Destrua_se;
-
-      procedure SetPais( pPais : String );
-      procedure SetDDI( pDDI : String );
-      procedure SetSigla( pSigla : String );
-      function GetPais: String;
-      function GetDDI: String;
-      function GetSigla: String;
-      function Clone: Paises;
+  Paises = class(Pai)
+  private
+  protected
+    Pais: string[50];
+    DDI: string[5];
+    Sigla: string[3];
+  public
+    constructor CrieObj;
+    destructor Destrua_se;
+    constructor CrieInit(pCodigo: integer; pPais, pDDI, pSigla, pDataCad: string);
+    procedure SetPais(pPais: string);
+    procedure SetDDI(pDDI: string);
+    procedure SetSigla(pSigla: string);
+    function GetPais: string;
+    function GetDDI: string;
+    function GetSigla: string;
+    function Clone: Paises;
   end;
 
 implementation
@@ -36,8 +37,8 @@ implementation
 constructor Paises.CrieObj;
 begin
   inherited;
-  Pais  := '';
-  DDI   := '';
+  Pais := '';
+  DDI := '';
   Sigla := '';
 end;
 
@@ -46,32 +47,41 @@ begin
   inherited;
 end;
 
-procedure Paises.SetPais(pPais: String);
+constructor Paises.CrieInit(pCodigo: integer; pPais, pDDI, pSigla, pDataCad: string);
+begin
+  Codigo  := pCodigo;
+  Pais    := pPais;
+  DDI     := pDDI;
+  Sigla   := pSigla;
+  DataCad := pDataCad;
+end;
+
+procedure Paises.SetPais(pPais: string);
 begin
   Pais := pPais;
 end;
 
-procedure Paises.SetDDI(pDDI: String);
+procedure Paises.SetDDI(pDDI: string);
 begin
   DDI := pDDI;
 end;
 
-procedure Paises.SetSigla(pSigla: String);
+procedure Paises.SetSigla(pSigla: string);
 begin
   Sigla := pSigla;
 end;
 
-function Paises.GetPais: String;
+function Paises.GetPais: string;
 begin
   Result := Pais;
 end;
 
-function Paises.GetDDI: String;
+function Paises.GetDDI: string;
 begin
   Result := DDI;
 end;
 
-function Paises.GetSigla: String;
+function Paises.GetSigla: string;
 begin
   Result := Sigla;
 end;
@@ -79,12 +89,11 @@ end;
 function Paises.Clone: Paises;
 begin
   Result := Paises.CrieObj;
-  Result.SetCodigo( Codigo );
-  Result.SetPais( Pais );
-  Result.SetDDI( DDI );
-  Result.SetSigla( Sigla );
-  Result.SetDataCad( DataCad );
+  Result.SetCodigo(Codigo);
+  Result.SetPais(Pais);
+  Result.SetDDI(DDI);
+  Result.SetSigla(Sigla);
+  Result.SetDataCad(DataCad);
 end;
 
 end.
-

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, uCadastro,
-  uConsultaPaises, uEstados, uPaises;
+  uConsultaPaises, uEstados, uControllerEstados;
 
 type
 
@@ -24,19 +24,20 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
-    aConsultaPaises : TConsultaPaises;
+    aConsultaPaises: TConsultaPaises;
   protected
-    oEstado : Estados;
-    oPais   : Paises;
+    oEstado: Estados;
+    aCtrlEstado: CtrlEstados;
   public
 
-    procedure Salvar;         Override;
-    procedure Sair;           Override;
-    procedure LimparEdt;      Override;
-    procedure CarregaEdt;     Override;
-    procedure BloqueiEdt;     Override;
-    procedure DesbloqueiaEdt; Override;
-    procedure ConhecaObj(pObj : TObject);
+    procedure Salvar; override;
+    procedure Sair; override;
+    procedure LimparEdt; override;
+    procedure CarregaEdt; override;
+    procedure BloqueiEdt; override;
+    procedure DesbloqueiaEdt; override;
+    procedure SetConsultaPaises(pConsultaPais: TObject);
+    procedure ConhecaObj(pObj: TObject; pCtrl: TObject); override;
 
   end;
 
@@ -51,21 +52,19 @@ implementation
 
 procedure TCadastroEstados.FormCreate(Sender: TObject);
 begin
-  aConsultaPaises := TConsultaPaises.Create(nil);
-  oPais := Paises.CrieObj;
+
 end;
 
 procedure TCadastroEstados.btn_PesquisarClick(Sender: TObject);
 begin
-  aConsultaPaises.ConhecaObj( oPais ) ;
+  aConsultaPaises.ConhecaObj(oEstado.GetoPais, aCtrlEstado.getCtrlPaises);
   aConsultaPaises.ShowModal;
-  edt_Pais.Text := oPais.GetPais;
+  edt_Pais.Text := oEstado.GetoPais.GetPais;
 end;
 
 procedure TCadastroEstados.FormDestroy(Sender: TObject);
 begin
-  oPais.Destrua_se;
-  aConsultaPaises.FreeInstance;
+
 end;
 
 procedure TCadastroEstados.Salvar;
@@ -89,12 +88,13 @@ begin
   end
   else
   begin
-    oEstado.SetCodigo( StrToInt( Edt_Codigo.Text ) );
-    oEstado.SetEstado( Edt_Estado.Text );
-    oEstado.SetUF( Edt_Sigla.Text );
-    oPais.SetPais( Edt_Pais.Text );
-    oEstado.SetoPais( oPais );
-    oEstado.SetDataCad( DateToStr( Now ) );
+    oEstado.SetCodigo(StrToInt(Edt_Codigo.Text));
+    oEstado.SetEstado(Edt_Estado.Text);
+    oEstado.SetUF(Edt_Sigla.Text);
+    oEstado.GetoPais.SetPais(Edt_Pais.Text);
+    oEstado.SetoPais(oEstado.GetoPais);
+    oEstado.SetDataCad(DateToStr(Now));
+    aCtrlEstado.Salvar(oEstado);
     inherited Salvar;
   end;
 end;
@@ -115,10 +115,10 @@ end;
 procedure TCadastroEstados.CarregaEdt;
 begin
   inherited CarregaEdt;
-  Edt_Codigo.Text  := IntToStr( oEstado.GetCodigo );
-  Edt_Estado.Text  := oEstado.GetEstado;
-  Edt_Sigla.Text   := oEstado.GetUF;
-  Edt_Pais.Text    := oEstado.GetoPais.GetPais;
+  Edt_Codigo.Text := IntToStr(oEstado.GetCodigo);
+  Edt_Estado.Text := oEstado.GetEstado;
+  Edt_Sigla.Text := oEstado.GetUF;
+  Edt_Pais.Text := oEstado.GetoPais.GetPais;
   edt_DataCad.Text := oEstado.GetDataCad;
 end;
 
@@ -126,21 +126,28 @@ procedure TCadastroEstados.BloqueiEdt;
 begin
   inherited BloqueiEdt;
   Edt_Estado.Enabled := False;
-  Edt_Sigla.Enabled  := False;
-  Edt_Pais.Enabled   := False;
+  Edt_Sigla.Enabled := False;
+  Edt_Pais.Enabled := False;
 end;
 
 procedure TCadastroEstados.DesbloqueiaEdt;
 begin
   inherited DesbloqueiaEdt;
   Edt_Estado.Enabled := True;
-  Edt_Sigla.Enabled  := True;
-  Edt_Pais.Enabled   := True;
+  Edt_Sigla.Enabled := True;
+  Edt_Pais.Enabled := True;
 end;
 
-procedure TCadastroEstados.ConhecaObj(pObj: TObject);
+procedure TCadastroEstados.SetConsultaPaises(pConsultaPais: TObject);
 begin
-  oEstado := Estados( pObj );
+  aConsultaPaises := TConsultaPaises(pConsultaPais);
+end;
+
+procedure TCadastroEstados.ConhecaObj(pObj: TObject; pCtrl: TObject);
+begin
+  oEstado := Estados(pObj);
+  aCtrlEstado := CtrlEstados(pCtrl);
+  //  inherited ConhecaObj(pObj, pCtrl);
 end;
 
 end.

@@ -18,6 +18,7 @@ type
     public
       constructor CrieObj;
       destructor Destrua_se;
+       constructor CrieInit(pCodigo: integer; pEstado, pUF, pPais, pDataCad: string);
 
       procedure SetoPais( poPais : Paises );
       procedure SetEstado( pEstado : String );
@@ -44,6 +45,15 @@ destructor Estados.Destrua_se;
 begin
   inherited;
   oPais.Destrua_se;
+end;
+
+constructor Estados.CrieInit(pCodigo: integer; pEstado, pUF, pPais,
+  pDataCad: string);
+begin
+  Codigo := pCodigo;
+  Estado := pEstado;
+  UF := pUF;
+  oPais.SetPais(pPais);
 end;
 
 procedure Estados.SetoPais(poPais: Paises);

@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, uCadastro,
-  uConsultaEstados, uCidades, uEstados;
+  uConsultaEstados, uCidades, uEstados,
+  uControllerCidades;
 
 type
 
@@ -28,6 +29,7 @@ type
   protected
     oEstado : Estados;
     aCidade : Cidades;
+    aCtrlCidade : CtrlCidades;
   public
     procedure Salvar;         Override;
     procedure Sair;           Override;
@@ -35,7 +37,8 @@ type
     procedure CarregaEdt;     Override;
     procedure BloqueiEdt;     Override;
     procedure DesbloqueiaEdt; Override;
-    procedure ConhecaObj(pObj : TObject);
+    procedure ConhecaObj(pObj: TObject; pCtrl: TObject); override;
+    procedure SetConsultaEstados( pConsultaEstados : TObject );
 
   end;
 
@@ -50,21 +53,19 @@ implementation
 
 procedure TCadastroCidades.FormCreate(Sender: TObject);
 begin
-  oEstado          := Estados.CrieObj;
-  aConsultaEstados := TConsultaEstados.Create(nil);
+
 end;
 
 procedure TCadastroCidades.btn_PesquisarClick(Sender: TObject);
 begin
-  aConsultaEstados.ConhecaObj( oEstado );
+  aConsultaEstados.ConhecaObj( aCidade.GetoEstado,  aCtrlCidade.getCtrlEstados);
   aConsultaEstados.ShowModal;
-  edt_Estado.Text := oEstado.GetEstado;
+  edt_Estado.Text := aCidade.GetoEstado.GetEstado;
 end;
 
 procedure TCadastroCidades.FormDestroy(Sender: TObject);
 begin
-  oEstado.Destrua_se;
-  aConsultaEstados.FreeInstance;
+
 end;
 
 procedure TCadastroCidades.Salvar;
@@ -137,9 +138,14 @@ begin
   Edt_Estado.Enabled := True;
 end;
 
-procedure TCadastroCidades.ConhecaObj(pObj: TObject);
+procedure TCadastroCidades.ConhecaObj(pObj: TObject; pCtrl: TObject);
 begin
   aCidade := Cidades( pObj );
+end;
+
+procedure TCadastroCidades.SetConsultaEstados(pConsultaEstados: TObject);
+begin
+  aConsultaEstados := TConsultaEstados( pConsultaEstados );
 end;
 
 end.

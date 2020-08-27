@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus,
-  uInter, uPaises, uEstados, uCidades;
+  uInter, uPaises, uEstados, uCidades,
+  uControllerPaises, ucontrollerEstados, uControllerCidades;
 
 type
 
@@ -18,7 +19,7 @@ type
     MenuPaises: TMenuItem;
     MenuCidades: TMenuItem;
     MenuItem4: TMenuItem;
-    N2: TMenuItem;
+    MenuItem3: TMenuItem;
     MenuEstados: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -27,10 +28,14 @@ type
     procedure MenuItem4Click(Sender: TObject);
     procedure MenuEstadosClick(Sender: TObject);
   private
-    aInter : Inter;
-    oPais : Paises;
-    oEstado : Estados;
-    aCidade : Cidades;
+    aInter: Inter;
+    oPais: Paises;
+    oEstado: Estados;
+    aCidade: Cidades;
+
+    aCtrlPais: CtrlPaises;
+    aCtrlEstado: CtrlEstados;
+    aCtrlCidade: CtrlCidades;
   public
 
   end;
@@ -46,10 +51,14 @@ implementation
 
 procedure TGerente.FormCreate(Sender: TObject);
 begin
-  aInter  := Inter.CrieObj;
-  oPais   := Paises.CrieObj;
+  aInter := Inter.CrieObj;
+  oPais := Paises.CrieObj;
   oEstado := Estados.CrieObj;
   aCidade := Cidades.CrieObj;
+
+  aCtrlPais := CtrlPaises.CrieObj;
+  aCtrlEstado := CtrlEstado.CrieObj;
+  aCtrlCidade := CtrlCidade.CrieObj;
 end;
 
 procedure TGerente.FormDestroy(Sender: TObject);
@@ -58,16 +67,21 @@ begin
   oPais.Destrua_se;
   oEstado.Destrua_se;
   aCidade.Destrua_se;
+
+  aCtrlPais.Destrua_se;
+  aCtrlEstado.Destrua_se;
+  aCtrlCidade.Destrua_se;
 end;
 
 procedure TGerente.MenuPaisesClick(Sender: TObject);
 begin
-  aInter.ConsultaPaises( oPais );
+  aInter.ConsultaPaises(oPais, aCtrlPais);
+
 end;
 
 procedure TGerente.MenuCidadesClick(Sender: TObject);
 begin
-  aInter.ConsultaCidades( aCidade );
+  aInter.ConsultaCidades(aCidade, aCtrlCidade);
 end;
 
 procedure TGerente.MenuItem4Click(Sender: TObject);
@@ -77,7 +91,7 @@ end;
 
 procedure TGerente.MenuEstadosClick(Sender: TObject);
 begin
-  aInter.ConsultaEstados( oEstado );
+  aInter.ConsultaEstados(oEstado, aCtrlEstado);
 end;
 
 

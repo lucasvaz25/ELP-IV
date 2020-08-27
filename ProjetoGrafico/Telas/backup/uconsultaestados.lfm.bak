@@ -2,4 +2,30 @@ inherited ConsultaEstados: TConsultaEstados
   Caption = 'Consulta de Estados'
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  inherited ListView1: TListView
+    Columns = <    
+      item
+        Caption = 'Código'
+        Width = 60
+      end    
+      item
+        Caption = 'Estado'
+        Width = 200
+      end    
+      item
+        Caption = 'UF'
+        Width = 35
+      end    
+      item
+        Caption = 'País'
+        Width = 150
+      end    
+      item
+        Caption = 'Data Cad.'
+        Width = 80
+      end>
+    GridLines = True
+    RowSelect = True
+    ViewStyle = vsReport
+  end
 end

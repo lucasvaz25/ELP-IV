@@ -20,6 +20,7 @@ type
       procedure Excluir( pObj : TObject );            Virtual;
       function Pesquisar( pChave : string ) : string; Virtual;
       function Carregar( pPos : Integer ): TObject;   Virtual;
+      function TotalDados: Integer;                   Virtual;
   end;
 
 implementation
@@ -52,6 +53,11 @@ begin
 end;
 
 function DAO.Carregar(pPos: Integer): TObject;
+begin
+
+end;
+
+function DAO.TotalDados: Integer;
 begin
 
 end;

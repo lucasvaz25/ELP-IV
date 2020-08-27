@@ -6,26 +6,27 @@ interface
 
 uses
   Classes, SysUtils;
+
 type
 
   { Colecao }
 
   Colecao = class
-    private
-    protected
-      Item : Array [1..100] of TObject;
-      Tam  : Integer;
-    public
-      constructor CrieObj;
-      destructor Destrua_se;
+  private
+  protected
+    Item: array [1..100] of TObject;
+    Tam: integer;
+  public
+    constructor CrieObj; virtual;
+    destructor Destrua_se; virtual;
 
-      procedure InsereFim( pObj : TObject );
-      procedure Insere( pObj : TObject; pPos : Integer );
-      procedure Remove( Var pObj : TObject; pPos : Integer );
-      function VerColVazia: Boolean;
-      function VerColCheia: Boolean;
-      function GetTam: Integer;
-      function CarregaObj( pPos : Integer ): TObject;
+    procedure InsereFim(pObj: TObject);
+    procedure Insere(pObj: TObject; pPos: integer);
+    procedure Remove(var pObj: TObject; pPos: integer);
+    function VerColVazia: boolean;
+    function VerColCheia: boolean;
+    function GetTam: integer;
+    function CarregaObj(pPos: integer): TObject;
   end;
 
 implementation
@@ -39,64 +40,63 @@ end;
 
 destructor Colecao.Destrua_se;
 var
-  I : Integer;
+  I: integer;
 begin
   for I := 1 to Tam do
-    Item[I].FreeInstance;
+    FreeAndNil(Item[I]);
 end;
 
 procedure Colecao.InsereFim(pObj: TObject);
 begin
-  Tam       := Tam + 1;
+  Tam := Tam + 1;
   Item[Tam] := pObj;
 end;
 
-procedure Colecao.Insere(pObj: TObject; pPos: Integer);
+procedure Colecao.Insere(pObj: TObject; pPos: integer);
 var
-  I : Integer;
+  I: integer;
 begin
-  if ( pPos = Tam + 1 ) then
-    Self.InsereFim( pObj )
+  if (pPos = Tam + 1) then
+    Self.InsereFim(pObj)
   else
   begin
     Tam := Tam + 1;
-    for I := Tam DownTo pPos + 1 do
+    for I := Tam downto pPos + 1 do
     begin
-      Item[ I ] := Item[ I + 1 ];
+      Item[I] := Item[I + 1];
     end;
-    Item[ pPos ] := pObj;
+    Item[pPos] := pObj;
   end;
 end;
 
-procedure Colecao.Remove( Var pObj: TObject; pPos: Integer);
+procedure Colecao.Remove(var pObj: TObject; pPos: integer);
 var
-  I : Integer;
+  I: integer;
 begin
-  pObj := Item[ pPos ];
+  pObj := Item[pPos];
   for I := pPos to Tam - 1 do
-    Item[ I ] := Item[ I + 1 ];
+    Item[I] := Item[I + 1];
   Tam := Tam - 1;
 end;
 
-function Colecao.VerColVazia: Booelan;
+function Colecao.VerColVazia: boolean;
 begin
   Result := Tam = 0;
 end;
 
-function Colecao.VerColCheia: Booelan;
+function Colecao.VerColCheia: boolean;
 begin
   Result := Tam = 100;
 end;
 
-function Colecao.GetTam: Integer;
+function Colecao.GetTam: integer;
 begin
   Result := Tam;
 end;
 
-function Colecao.CarregaObj(pPos: Integer): TObject;
+function Colecao.CarregaObj(pPos: integer): TObject;
 begin
-  Result := Item[ pPos ];
+  Result := Item[pPos];
 end;
 
 end.
-

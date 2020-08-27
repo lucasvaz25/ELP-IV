@@ -1,11 +1,5 @@
 inherited CadastroPaises: TCadastroPaises
   Caption = 'Cadastro de Países'
-  ClientHeight = 0
-  ClientWidth = 0
-  inherited edt_Codigo: TEdit
-    Width = 80
-    MaxLength = 0
-  end
   inherited btn_Salvar: TButton
     TabOrder = 4
   end
@@ -22,6 +16,7 @@ inherited CadastroPaises: TCadastroPaises
     Width = 360
     CharCase = ecUppercase
     MaxLength = 50
+    OnExit = edt_PaisExit
     TabOrder = 1
   end
   object lbl_Pais: TLabel[8]
@@ -54,6 +49,7 @@ inherited CadastroPaises: TCadastroPaises
     Height = 23
     Top = 96
     Width = 80
+    CharCase = ecUppercase
     MaxLength = 3
     TabOrder = 3
   end

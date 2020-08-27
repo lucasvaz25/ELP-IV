@@ -7,7 +7,8 @@ interface
 uses
   Classes, SysUtils,
   uConsultaPaises, uConsultaEstados, uConsultaCidades,
-  uCadastroPaises, uCadastroEstados, uCadastroCidades;
+  uCadastroPaises, uCadastroEstados, uCadastroCidades,
+  uControllerPaises;
 type
 
   { Inter }
@@ -25,9 +26,9 @@ type
       constructor CrieObj;
       destructor Destrua_se;
 
-      procedure ConsultaPaises( pObj : TObject );
-      procedure ConsultaEstados( pObj : TObject );
-      procedure ConsultaCidades( pObj : TObject );
+      procedure ConsultaPaises( pObj : TObject; pCtrl : TObject );
+      procedure ConsultaEstados( pObj : TObject; pCtrl : TObject );
+      procedure ConsultaCidades( pObj : TObject; pCtrl : TObject );
 
   end;
 
@@ -43,6 +44,13 @@ begin
   oCadastroPaises  := TCadastroPaises.Create(nil);
   oCadastroEstados := TCadastroEstados.Create(nil);
   oCadastroCidades := TCadastroCidades.Create(nil);
+
+  aConsultaPaises.SetFormCadastro( oCadastroPaises );
+  aConsultaEstados.SetFormCadastro( oCadastroEstados );
+  aConsultaCidades.SetFormCadastro( oCadastroCidades );
+
+  oCadastroEstados.SetConsultaPaises( aConsultaPaises );
+  oCadastroCidades.SetConsultaEstados( aConsultaEstados );
 end;
 
 destructor Inter.Destrua_se;
@@ -56,21 +64,21 @@ begin
 end;
 {$ENDREGION}
 {$REGION 'PECA_DADOS'}
- procedure Inter.ConsultaPaises( pObj : TObject );
+ procedure Inter.ConsultaPaises( pObj : TObject; pCtrl : TObject );
 begin
-  aConsultaPaises.ConhecaObj( pObj );
+  aConsultaPaises.ConhecaObj( pObj, pCtrl );
   aConsultaPaises.ShowModal;
 end;
 
-procedure Inter.ConsultaEstados( pObj : TObject );
+procedure Inter.ConsultaEstados( pObj : TObject; pCtrl : TObject );
 begin
-  aConsultaEstados.ConhecaObj( pObj );
+  aConsultaEstados.ConhecaObj( pObj, pCtrl );
   aConsultaEstados.ShowModal;
 end;
 
-procedure Inter.ConsultaCidades( pObj : TObject );
+procedure Inter.ConsultaCidades( pObj : TObject; pCtrl : TObject );
 begin
-  aConsultaCidades.ConhecaObj( pObj );
+  aConsultaCidades.ConhecaObj( pObj, pCtrl );
   aConsultaCidades.ShowModal;
 end;
 

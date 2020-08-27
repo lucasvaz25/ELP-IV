@@ -2,10 +2,38 @@ inherited ConsultaPaises: TConsultaPaises
   Caption = 'Consulta de Paises'
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  OnShow = FormShow
   inherited btn_Novo: TButton
     OnClick = btn_NovoClick
   end
   inherited btn_Alterar: TButton
     Top = 328
+  end
+  inherited ListView1: TListView
+    Columns = <    
+      item
+        Alignment = taRightJustify
+        Caption = 'Código'
+        Width = 70
+      end    
+      item
+        Caption = 'País'
+        Width = 250
+      end    
+      item
+        Alignment = taRightJustify
+        Caption = 'DDI'
+      end    
+      item
+        Caption = 'Sigla'
+        Width = 40
+      end    
+      item
+        Caption = 'Data Cad.'
+        Width = 65
+      end>
+    GridLines = True
+    RowSelect = True
+    ViewStyle = vsReport
   end
 end

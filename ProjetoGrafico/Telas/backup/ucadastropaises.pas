@@ -5,7 +5,7 @@ unit uCadastroPaises;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, uCadastro, uPaises;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, uCadastro, uPaises, uControllerPaises;
 
 type
 
@@ -18,10 +18,12 @@ type
     lbl_Sigla: TLabel;
     lbl_Pais: TLabel;
     lbl_DDI: TLabel;
+    procedure edt_PaisExit(Sender: TObject);
   private
 
   protected
     oPais : Paises;
+    aCtrlPais : CtrlPaises;
   public
     procedure Salvar;         Override;
     procedure Sair;           Override;
@@ -29,7 +31,7 @@ type
     procedure CarregaEdt;     Override;
     procedure BloqueiEdt;     Override;
     procedure DesbloqueiaEdt; Override;
-    procedure ConhecaObj(pObj : TObject);
+    procedure ConhecaObj(pObj : TObject; pCtrl : TObject );
   end;
 
 var
@@ -40,6 +42,23 @@ implementation
 {$R *.lfm}
 
 { TCadastroPaises }
+
+procedure TCadastroPaises.edt_PaisExit(Sender: TObject);
+var
+  msg : string;
+begin
+  if Self.edt_Pais.Text = EmptyStr then
+  begin
+    ShowMessage('Campo País é obrigatório!');
+    Self.edt_Pais.SetFocus;
+  end
+  else
+  begin
+    msg := aCtrlPais.Pesquisar( Self.edt_Pais.Text );
+    if msg <> '' then
+      showmessage(msg);
+  end;
+end;
 
 procedure TCadastroPaises.Salvar;
 begin
@@ -65,6 +84,7 @@ begin
     oPais.SetDDI( Edt_DDI.Text);
     oPais.SetSigla( Edt_Sigla.Text );
     oPais.SetDataCad( DateToStr( Now ) );
+    aCtrlPais.Salvar( oPais );
     inherited Salvar;
   end;
 end;
@@ -109,9 +129,10 @@ begin
   Self.Edt_Sigla.Enabled := True;
 end;
 
-procedure TCadastroPaises.ConhecaObj(pObj: TObject);
+procedure TCadastroPaises.ConhecaObj(pObj: TObject; pCtrl : TObject);
 begin
   oPais := Paises( pObj );
+  aCtrlPais := CtrlPaises( pCtrl );
 end;
 
 end.

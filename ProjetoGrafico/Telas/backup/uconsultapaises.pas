@@ -5,8 +5,8 @@ unit uConsultaPaises;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, uConsulta,
-  uCadastroPaises, uPaises;
+  Classes, SysUtils, Forms, Controls, Graphics, ComCtrls, Dialogs, uConsulta,
+  uCadastroPaises, uPaises, uControllerPaises;
 
 type
 
@@ -15,9 +15,11 @@ type
   TConsultaPaises = class(TConsulta)
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     oCadastroPaises : TCadastroPaises;
     oPais : Paises;
+    aCtrlPais : CtrlPaises;
   public
     procedure Sair;      Override;
     procedure Novo;      Override;
@@ -25,7 +27,8 @@ type
     procedure Excluir;   Override;
     procedure Pesquisar; Override;
     procedure SetFormCadastro( pObj : TObject ); Override;
-    procedure ConhecaObj( pObj : TObject );
+    procedure ConhecaObj( pObj : TObject; pCtrl :TObject );
+    procedure CarregaListView;  Override;
   end;
 
 var
@@ -39,12 +42,17 @@ implementation
 
 procedure TConsultaPaises.FormCreate(Sender: TObject);
 begin
-  oCadastroPaises := TCadastroPaises.Create(nil);
+
 end;
 
 procedure TConsultaPaises.FormDestroy(Sender: TObject);
 begin
-  oCadastroPaises.FreeInstance;
+
+end;
+
+procedure TConsultaPaises.FormShow(Sender: TObject);
+begin
+  Self.CarregaListView;
 end;
 
 procedure TConsultaPaises.Sair;
@@ -54,26 +62,28 @@ end;
 
 procedure TConsultaPaises.Novo;
 begin
-  oCadastroPaises.ConhecaObj( oPais );
+  oCadastroPaises.ConhecaObj( oPais, aCtrlPais );
   oCadastroPaises.LimparEdt;
   oCadastroPaises.ShowModal;
+  Self.CarregaListView;
   inherited Novo;
 end;
 
 procedure TConsultaPaises.Alterar;
 begin
-  inherited Alterar;
-  oCadastroPaises.ConhecaObj( oPais );
+  oCadastroPaises.ConhecaObj( oPais, aCtrlPais );
   oCadastroPaises.LimparEdt;
   oCadastroPaises.CarregaEdt;
   oCadastroPaises.ShowModal;
+  Self.CarregaListView;
+  inherited Alterar;
 end;
 
 procedure TConsultaPaises.Excluir;
 var
   Aux : String;
 begin
-  oCadastroPaises.ConhecaObj( oPais );
+  oCadastroPaises.ConhecaObj( oPais, aCtrlPais );
   oCadastroPaises.LimparEdt;
   oCadastroPaises.CarregaEdt;
   oCadastroPaises.BloqueiEdt;
@@ -82,6 +92,7 @@ begin
   oCadastroPaises.ShowModal;
   oCadastroPaises.btn_Salvar.Caption := Aux;
   oCadastroPaises.DesbloqueiaEdt;
+  Self.CarregaListView;
   inherited Excluir;
 end;
 
@@ -96,9 +107,30 @@ begin
   inherited SetFormCadastro( oCadastroPaises ) ;
 end;
 
-procedure TConsultaPaises.ConhecaObj(pObj: TObject);
+procedure TConsultaPaises.ConhecaObj(pObj: TObject; pCtrl :TObject);
 begin
   oPais := Paises( pObj );
+  aCtrlPais := CtrlPaises(  pCtrl );
+end;
+
+procedure TConsultaPaises.CarregaListView;
+var
+  I, Tam : Integer;
+  umPais: Paises;
+  LvITem: TListItem;
+begin
+  Tam := aCtrlPais.TotalDados;
+  Self.ListView1.Clear;
+  for I := 1 to Tam do
+  begin
+    umPais := Paises(aCtrlPais.Carregar(I));
+    LvItem := self.ListView1.Items.Add;
+    LvItem.Caption := IntToStr(umPais.GetCodigo);
+    LvItem.SubItems.Add(umPais.GetPais);
+    LvItem.SubItems.Add(umPais.GetDDI);
+    LvItem.SubItems.Add(umPais.GetSigla);
+    LvItem.SubItems.Add(umPais.GetDataCad);
+  end;
 end;
 
 end.

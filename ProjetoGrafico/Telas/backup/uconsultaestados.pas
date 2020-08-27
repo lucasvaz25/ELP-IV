@@ -5,8 +5,8 @@ unit uConsultaEstados;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, uConsulta,
-  uCadastroEstados, uEstados;
+  Classes, SysUtils, Forms, Controls, Graphics, ComCtrls, Dialogs, uConsulta,
+  uCadastroEstados, uEstados, uControllerEstados;
 
 type
 
@@ -16,16 +16,18 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
-    oCadastroEstados : TCadastroEstados;
-    oEstado : Estados;
+    oCadastroEstados: TCadastroEstados;
+    oEstado: Estados;
+    aCtrlEstado: CtrlEstados;
   public
-    procedure Sair;      Override;
-    procedure Novo;      Override;
-    procedure Alterar;   Override;
-    procedure Excluir;   Override;
-    procedure Pesquisar; Override;
-    procedure SetFormCadastro( pObj : TObject ); Override;
-    procedure ConhecaObj( pObj : TObject );
+    procedure Sair; override;
+    procedure Novo; override;
+    procedure Alterar; override;
+    procedure Excluir; override;
+    procedure Pesquisar; override;
+    procedure SetFormCadastro(pObj: TObject); override;
+    procedure ConhecaObj(pObj: TObject; pCtrl: TObject); override;
+    procedure CarregaListView; override;
 
   end;
 
@@ -40,12 +42,12 @@ implementation
 
 procedure TConsultaEstados.FormCreate(Sender: TObject);
 begin
-  oCadastroEstados := TCadastroEstados.Create(nil);
+
 end;
 
 procedure TConsultaEstados.FormDestroy(Sender: TObject);
 begin
-  oCadastroEstados.FreeInstance;
+
 end;
 
 procedure TConsultaEstados.Sair;
@@ -55,7 +57,7 @@ end;
 
 procedure TConsultaEstados.Novo;
 begin
-  oCadastroEstados.ConhecaObj( oEstado );
+  oCadastroEstados.ConhecaObj(oEstado, aCtrlEstado);
   oCadastroEstados.LimparEdt;
   oCadastroEstados.ShowModal;
   inherited Novo;
@@ -63,7 +65,7 @@ end;
 
 procedure TConsultaEstados.Alterar;
 begin
-  oCadastroEstados.ConhecaObj( oEstado );
+  oCadastroEstados.ConhecaObj(oEstado, aCtrlEstado);
   oCadastroEstados.LimparEdt;
   oCadastroEstados.CarregaEdt;
   oCadastroEstados.ShowModal;
@@ -72,9 +74,9 @@ end;
 
 procedure TConsultaEstados.Excluir;
 var
-  Aux : String;
+  Aux: string;
 begin
-  oCadastroEstados.ConhecaObj( oEstado );
+  oCadastroEstados.ConhecaObj(oEstado, aCtrlEstado);
   oCadastroEstados.LimparEdt;
   oCadastroEstados.CarregaEdt;
   oCadastroEstados.BloqueiEdt;
@@ -93,12 +95,35 @@ end;
 
 procedure TConsultaEstados.SetFormCadastro(pObj: TObject);
 begin
-  inherited SetFormCadastro(pObj);
+  oCadastroEstados := TCadastroEstados(pObj);
+  inherited SetFormCadastro(oCadastroEstados);
 end;
 
-procedure TConsultaEstados.ConhecaObj(pObj: TObject);
+procedure TConsultaEstados.ConhecaObj(pObj: TObject; pCtrl: TObject);
 begin
-  oEstado := Estados( pObj );
+  oEstado := Estados(pObj);
+  aCtrlEstado := CtrlEstados(pCtrl);
+end;
+
+procedure TConsultaEstados.CarregaListView;
+var
+  I, Tam: integer;
+  umEstado: Estados;
+  LvITem: TListItem;
+begin
+  Tam := aCtrlEstado.TotalDados;
+  Self.ListView1.Clear;
+  for I := 1 to Tam do
+  begin
+    umEstado := Estados(aCtrlEstado.Carregar(I));
+    LvItem := self.ListView1.Items.Add;
+    LvItem.Caption := IntToStr(umEstado.GetCodigo);
+    LvItem.SubItems.Add(umEstado.GetEstado);
+    LvItem.SubItems.Add(umEstado.GetUF);
+    LvItem.SubItems.Add(umEstado.GetoPais.GetPais);
+    LvItem.SubItems.Add(umEstado.GetDataCad);
+  end;
+  //  inherited CarregaListView;
 end;
 
 end.

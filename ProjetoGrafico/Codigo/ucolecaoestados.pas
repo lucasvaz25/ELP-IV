@@ -5,7 +5,7 @@ unit uColecaoEstados;
 interface
 
 uses
-  Classes, SysUtils, uColecao, uEstados;
+  Classes, SysUtils, uColecao, uEstados, uPaises;
 
 type
 
@@ -97,6 +97,7 @@ var
   mPais: string[50];
   mDataCad: string[10];
   umEstado: Estados;
+  umPais: Paises;
 begin
   Assign(Arq, 'Estados.Dat');
   Reset(Arq);
@@ -107,7 +108,10 @@ begin
     ReadLn(Arq, mUF);
     ReadLn(Arq, mPais);
     ReadLn(Arq, mDataCad);
-    umEstado := Estados.CrieInit(mCodigo, mEstado, mUF, mPais, mDataCad);
+    umPais := Paises.CrieObj;
+    umPais.SetPais(mPais);
+    umEstado := Estados.CrieInit(mCodigo, umPais, mEstado, mUF, mDataCad);
+    umPais.Destrua_se;
     Self.InsereFim(umEstado);
   end;
   Close(Arq);

@@ -5,7 +5,7 @@ unit uColecaoCidades;
 interface
 
 uses
-  Classes, SysUtils, uColecao, uCidades;
+  Classes, SysUtils, uColecao, uCidades, uEstados;
 
 type
 
@@ -90,8 +90,34 @@ begin
 end;
 
 procedure ColecaoCidades.LerArq;
+var
+  Arq: TextFile;
+  I, mCodigo: integer;
+  mCidade: string[50];
+  mDDD: string[3];
+  mSigla: string[3];
+  mEstado: string[50];
+  mDataCad: string[10];
+  umEstado: Estados;
+  umaCidade: Cidades;
 begin
-
+  Assign(Arq, 'Cidades.Dat');
+  Reset(Arq);
+  while (not EOF(Arq)) do
+  begin
+    ReadLn(Arq, mCodigo);
+    ReadLn(Arq, mCidade);
+    ReadLn(Arq, mDDD);
+    ReadLn(Arq, mSigla);
+    ReadLn(Arq, mEstado);
+    ReadLn(Arq, mDataCad);
+    umEstado := Estados.CrieObj;
+    umEstado.SetEstado(mEstado);
+    umaCidade := Cidades.CrieInit(mCodigo, umEstado, mCidade, mDDD, mSigla, mDataCad);
+    umEstado.Destrua_se;
+    Self.InsereFim(umaCidade);
+  end;
+  Close(Arq);
 end;
 
 end.

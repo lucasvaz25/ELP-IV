@@ -17,9 +17,11 @@ type
     btn_Pesquisar: TButton;
     edt_Cidade: TEdit;
     edt_DDD: TEdit;
+    edt_Sigla: TEdit;
     edt_Estado: TEdit;
     lbl_Cidade: TLabel;
     lbl_DDD: TLabel;
+    lbl_Sigla: TLabel;
     lbl_Estado: TLabel;
     procedure btn_PesquisarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -58,7 +60,7 @@ end;
 
 procedure TCadastroCidades.btn_PesquisarClick(Sender: TObject);
 begin
-  aConsultaEstados.ConhecaObj( aCidade.GetoEstado,  aCtrlCidade.GetCtrlEstado);
+  aConsultaEstados.ConhecaObj( aCidade.GetoEstado,  aCtrlCidade.getCtrlEstados);
   aConsultaEstados.ShowModal;
   edt_Estado.Text := aCidade.GetoEstado.GetEstado;
 end;
@@ -92,10 +94,11 @@ begin
     aCidade.SetCodigo( StrToInt( Edt_Codigo.Text ) );
     aCidade.SetCidade( Edt_Cidade.Text );
     aCidade.SetDDD( Edt_DDD.Text );
-    oEstado.SetEstado( Edt_Estado.Text );
-    aCidade.SetoEstado( oEstado );
+    aCidade.SetSigla(edt_Sigla.Text);
+    aCidade.GetoEstado.SetEstado( Edt_Estado.Text );
     aCidade.SetDataCad( DateToStr( Now ) );
-    inherited Salvar;
+    aCtrlCidade.Salvar(aCidade);
+//    inherited Salvar;
   end;
 end;
 
@@ -110,6 +113,7 @@ begin
   Edt_Cidade.Clear;
   Edt_DDD.Clear;
   Edt_Estado.Clear;
+  edt_Sigla.Clear;
 end;
 
 procedure TCadastroCidades.CarregaEdt;
@@ -118,6 +122,7 @@ begin
   Edt_Codigo.Text  := IntToStr( aCidade.GetCodigo );
   Edt_Cidade.Text  := aCidade.GetCidade;
   Edt_DDD.Text     := aCidade.GetDDD;
+  edt_Sigla.Text   := aCidade.Sigla;
   Edt_Estado.Text  := aCidade.GetoEstado.GetEstado;
   edt_DataCad.Text := aCidade.GetDataCad;
 end;
@@ -127,6 +132,7 @@ begin
   inherited BloqueiEdt;
   Edt_Cidade.Enabled := False;
   Edt_DDD.Enabled    := False;
+  edt_Sigla.Enabled  := False;
   Edt_Estado.Enabled := False;
 end;
 
@@ -135,12 +141,14 @@ begin
   inherited DesbloqueiaEdt;
   Edt_Cidade.Enabled := True;
   Edt_DDD.Enabled    := True;
+  edt_Sigla.Enabled  := False;
   Edt_Estado.Enabled := True;
 end;
 
 procedure TCadastroCidades.ConhecaObj(pObj: TObject; pCtrl: TObject);
 begin
   aCidade := Cidades( pObj );
+  aCtrlCidade := CtrlCidades( pCtrl );
 end;
 
 procedure TCadastroCidades.SetConsultaEstados(pConsultaEstados: TObject);

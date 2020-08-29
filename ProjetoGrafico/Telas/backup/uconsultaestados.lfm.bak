@@ -2,6 +2,7 @@ inherited ConsultaEstados: TConsultaEstados
   Caption = 'Consulta de Estados'
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  OnShow = FormShow
   inherited ListView1: TListView
     Columns = <    
       item

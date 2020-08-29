@@ -19,6 +19,7 @@ type
   public
     constructor CrieObj;
     destructor Destrua_se;
+    constructor CrieInit(mCodigo: Integer; umEstado: Estados; mCidade, mDDD, mSigla, mDataCad: string);
 
     procedure SetoEstado( poEstado : Estados );
     procedure SetCidade( pCidade : String );
@@ -48,6 +49,17 @@ destructor Cidades.Destrua_se;
 begin
   inherited;
   oEstado.Destrua_se;
+end;
+
+constructor Cidades.CrieInit(mCodigo: Integer; umEstado: Estados; mCidade,
+  mDDD, mSigla, mDataCad: string);
+begin
+  Codigo  := mCodigo;
+  oEstado := umEstado;
+  Cidade  := mCidade;
+  DDD     := mDDD;
+  Sigla   := mSigla;
+  DataCad := mDataCad;
 end;
 
 procedure Cidades.SetoEstado(poEstado: Estados);

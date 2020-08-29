@@ -3,13 +3,13 @@ inherited CadastroCidades: TCadastroCidades
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   inherited btn_Salvar: TButton
-    TabOrder = 5
-  end
-  inherited btn_Sair: TButton
     TabOrder = 6
   end
-  inherited edt_DataCad: TEdit
+  inherited btn_Sair: TButton
     TabOrder = 7
+  end
+  inherited edt_DataCad: TEdit
+    TabOrder = 8
   end
   object edt_Cidade: TEdit[7]
     Left = 40
@@ -33,7 +33,7 @@ inherited CadastroCidades: TCadastroCidades
     Top = 192
     Width = 336
     CharCase = ecUppercase
-    TabOrder = 3
+    TabOrder = 4
   end
   object btn_Pesquisar: TButton[10]
     Left = 408
@@ -42,7 +42,7 @@ inherited CadastroCidades: TCadastroCidades
     Width = 75
     Caption = '&Pesquisar'
     OnClick = btn_PesquisarClick
-    TabOrder = 4
+    TabOrder = 5
   end
   object lbl_Cidade: TLabel[11]
     Left = 40
@@ -66,6 +66,22 @@ inherited CadastroCidades: TCadastroCidades
     Top = 176
     Width = 40
     Caption = '*Estado'
+    ParentColor = False
+  end
+  object edt_Sigla: TEdit[14]
+    Left = 504
+    Height = 23
+    Top = 112
+    Width = 80
+    CharCase = ecUppercase
+    TabOrder = 3
+  end
+  object lbl_Sigla: TLabel[15]
+    Left = 504
+    Height = 15
+    Top = 96
+    Width = 25
+    Caption = 'Sigla'
     ParentColor = False
   end
 end

@@ -5,7 +5,7 @@ unit uConsultaCidades;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, uConsulta,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, uConsulta,
   uCadastroCidades, uCidades, uControllerCidades;
 
 type
@@ -13,6 +13,7 @@ type
   { TConsultaCidades }
 
   TConsultaCidades = class(TConsulta)
+    procedure btn_PesquisarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
@@ -27,6 +28,7 @@ type
     procedure Pesquisar; override;
     procedure SetFormCadastro(pObj: TObject); override;
     procedure ConhecaObj(pObj: TObject; pCtrl: TObject); override;
+    procedure CarregaListView; override;
   end;
 
 var
@@ -37,6 +39,12 @@ implementation
 {$R *.lfm}
 
 { TConsultaCidades }
+
+procedure TConsultaCidades.btn_PesquisarClick(Sender: TObject);
+begin
+  inherited;
+  Self.CarregaListView;
+end;
 
 procedure TConsultaCidades.FormCreate(Sender: TObject);
 begin
@@ -58,6 +66,8 @@ begin
   oCadastroCidades.ConhecaObj(aCidade, aCtrlCidade);
   oCadastroCidades.LimparEdt;
   oCadastroCidades.ShowModal;
+  Self.CarregaListView;
+
   inherited Novo;
 end;
 
@@ -67,6 +77,7 @@ begin
   oCadastroCidades.LimparEdt;
   oCadastroCidades.CarregaEdt;
   oCadastroCidades.ShowModal;
+  Self.CarregaListView;
   inherited Alterar;
 end;
 
@@ -101,6 +112,27 @@ procedure TConsultaCidades.ConhecaObj(pObj: TObject; pCtrl: TObject);
 begin
   aCidade := Cidades(pObj);
   aCtrlCidade := CtrlCidades(pCtrl);
+end;
+
+procedure TConsultaCidades.CarregaListView;
+var
+  I, Tam: integer;
+  umaCidade: Cidades;
+  LvITem: TListItem;
+begin
+  Tam := aCtrlCidade.TotalDados;
+  Self.ListView1.Clear;
+  for I := 1 to Tam do
+  begin
+    umaCidade := Cidades(aCtrlCidade.Carregar(I));
+    LvItem := self.ListView1.Items.Add;
+    LvItem.Caption := IntToStr(umaCidade.GetCodigo);
+    LvItem.SubItems.Add(umaCidade.GetCidade);
+    LvItem.SubItems.Add(umaCidade.GetDDD);
+    LvItem.SubItems.Add(umaCidade.GetSigla);
+    LvItem.SubItems.Add(umaCidade.GetoEstado.GetEstado);
+    LvItem.SubItems.Add(umaCidade.GetDataCad);
+  end;
 end;
 
 end.

@@ -15,6 +15,7 @@ type
   TConsultaEstados = class(TConsulta)
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     oCadastroEstados: TCadastroEstados;
     oEstado: Estados;
@@ -50,6 +51,11 @@ begin
 
 end;
 
+procedure TConsultaEstados.FormShow(Sender: TObject);
+begin
+  Self.CarregaListView;
+end;
+
 procedure TConsultaEstados.Sair;
 begin
   inherited Sair;
@@ -60,6 +66,7 @@ begin
   oCadastroEstados.ConhecaObj(oEstado, aCtrlEstado);
   oCadastroEstados.LimparEdt;
   oCadastroEstados.ShowModal;
+  Self.CarregaListView;
   inherited Novo;
 end;
 
@@ -69,6 +76,7 @@ begin
   oCadastroEstados.LimparEdt;
   oCadastroEstados.CarregaEdt;
   oCadastroEstados.ShowModal;
+  Self.CarregaListView;
   inherited Alterar;
 end;
 

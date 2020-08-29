@@ -2,4 +2,37 @@ inherited ConsultaCidades: TConsultaCidades
   Caption = 'Consulta Cidades'
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  inherited btn_Pesquisar: TButton
+    OnClick = btn_PesquisarClick
+  end
+  inherited ListView1: TListView
+    Columns = <    
+      item
+        Caption = 'Código'
+        Width = 60
+      end    
+      item
+        Caption = 'Cidade'
+        Width = 180
+      end    
+      item
+        Caption = 'DDD'
+        Width = 40
+      end    
+      item
+        Caption = 'Sigla'
+        Width = 40
+      end    
+      item
+        Caption = 'Estado'
+        Width = 150
+      end    
+      item
+        Caption = 'Data Cad.'
+        Width = 80
+      end>
+    GridLines = True
+    RowSelect = True
+    ViewStyle = vsReport
+  end
 end

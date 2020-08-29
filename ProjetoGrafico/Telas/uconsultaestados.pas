@@ -66,6 +66,7 @@ begin
   oCadastroEstados.ConhecaObj(oEstado, aCtrlEstado);
   oCadastroEstados.LimparEdt;
   oCadastroEstados.ShowModal;
+  Self.CarregaListView;
   inherited Novo;
 end;
 
@@ -75,6 +76,7 @@ begin
   oCadastroEstados.LimparEdt;
   oCadastroEstados.CarregaEdt;
   oCadastroEstados.ShowModal;
+  Self.CarregaListView;
   inherited Alterar;
 end;
 
@@ -91,6 +93,7 @@ begin
   oCadastroEstados.ShowModal;
   oCadastroEstados.btn_Salvar.Caption := Aux;
   oCadastroEstados.DesbloqueiaEdt;
+  Self.CarregaListView;
   inherited Excluir;
 end;
 

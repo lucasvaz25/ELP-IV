@@ -5,7 +5,7 @@ unit uColecaoCidades;
 interface
 
 uses
-  Classes, SysUtils, uColecao, uCidades;
+  Classes, SysUtils, uColecao, uCidades, uEstados;
 
 type
 
@@ -71,13 +71,53 @@ begin
 end;
 
 procedure ColecaoCidades.SalvaArq;
+var
+  Arq: TextFile;
+  I: integer;
 begin
-
+  Assign(Arq, 'Cidades.Dat');
+  Rewrite(Arq);
+  for I := 1 to Tam do
+  begin
+    WriteLn(Arq, Cidades(Item[I]).GetCodigo);
+    WriteLn(Arq, Cidades(Item[I]).GetCidade);
+    WriteLn(Arq, Cidades(Item[I]).GetDDD);
+    WriteLn(Arq, Cidades(Item[I]).GetSigla);
+    WriteLn(Arq, Cidades(Item[I]).GetoEstado.GetEstado);
+    WriteLn(Arq, Cidades(Item[I]).GetDataCad);
+  end;
+  Close(Arq);
 end;
 
 procedure ColecaoCidades.LerArq;
+var
+  Arq: TextFile;
+  I, mCodigo: integer;
+  mCidade: string[50];
+  mDDD: string[3];
+  mSigla: string[3];
+  mEstado: string[50];
+  mDataCad: string[10];
+  umEstado: Estados;
+  umaCidade: Cidades;
 begin
-
+  Assign(Arq, 'Cidades.Dat');
+  Reset(Arq);
+  while (not EOF(Arq)) do
+  begin
+    ReadLn(Arq, mCodigo);
+    ReadLn(Arq, mCidade);
+    ReadLn(Arq, mDDD);
+    ReadLn(Arq, mSigla);
+    ReadLn(Arq, mEstado);
+    ReadLn(Arq, mDataCad);
+    umEstado := Estados.CrieObj;
+    umEstado.SetEstado(mEstado);
+    umaCidade := Cidades.CrieInit(mCodigo, umEstado, mCidade, mDDD, mSigla, mDataCad);
+    umEstado.Destrua_se;
+    Self.InsereFim(umCidade);
+  end;
+  Close(Arq);
 end;
 
 end.

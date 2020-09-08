@@ -84,7 +84,7 @@ begin
     oPais.SetDDI( Edt_DDI.Text);
     oPais.SetSigla( Edt_Sigla.Text );
     oPais.SetDataCad( DateToStr( Now ) );
-    aCtrlPais.Salvar( oPais );
+    aCtrlPais.Salvar( oPais.Clone );
     inherited Salvar;
   end;
 end;

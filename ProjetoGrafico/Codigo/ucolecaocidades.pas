@@ -103,7 +103,7 @@ var
 begin
   Assign(Arq, 'Cidades.Dat');
   Reset(Arq);
-  while (not EOF(Arq)) do
+  while (not eof(Arq)) do
   begin
     ReadLn(Arq, mCodigo);
     ReadLn(Arq, mCidade);

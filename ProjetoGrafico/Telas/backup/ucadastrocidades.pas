@@ -59,9 +59,14 @@ begin
 end;
 
 procedure TCadastroCidades.btn_PesquisarClick(Sender: TObject);
+var
+  mAux: string;
 begin
+  mAux := aConsultaEstados.btn_Sair.Caption;
+  aConsultaEstados.btn_Sair.Caption := 'Selecionar';
   aConsultaEstados.ConhecaObj( aCidade.GetoEstado,  aCtrlCidade.getCtrlEstados);
   aConsultaEstados.ShowModal;
+  aConsultaEstados.btn_Sair.Caption := mAux;;
   edt_Estado.Text := aCidade.GetoEstado.GetEstado;
 end;
 
@@ -97,7 +102,7 @@ begin
     aCidade.SetSigla(edt_Sigla.Text);
     aCidade.GetoEstado.SetEstado( Edt_Estado.Text );
     aCidade.SetDataCad( DateToStr( Now ) );
-    aCtrlCidade.Salvar(aCidade);
+    aCtrlCidade.Salvar(aCidade.Clone);
 //    inherited Salvar;
   end;
 end;
@@ -122,7 +127,7 @@ begin
   Edt_Codigo.Text  := IntToStr( aCidade.GetCodigo );
   Edt_Cidade.Text  := aCidade.GetCidade;
   Edt_DDD.Text     := aCidade.GetDDD;
-  edt_Sigla.Text   := aCidade.Sigla;
+  edt_Sigla.Text   := aCidade.GetSigla;
   Edt_Estado.Text  := aCidade.GetoEstado.GetEstado;
   edt_DataCad.Text := aCidade.GetDataCad;
 end;

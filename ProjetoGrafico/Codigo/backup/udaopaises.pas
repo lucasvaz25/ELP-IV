@@ -6,22 +6,23 @@ interface
 
 uses
   Classes, SysUtils, uColecaoPaises, uDAO, uPaises;
+
 type
 
   { DaoPaises }
 
-  DaoPaises = Class ( DAO )
+  DaoPaises = class(DAO)
   private
   protected
-    aColPaises : ColecaoPaises;
+    aColPaises: ColecaoPaises;
   public
     constructor CrieObj;
     destructor Destrua_se;
-    procedure Salvar( pObj : TObject );             Override;
-    procedure Excluir( pObj : TObject );            Override;
-    function Pesquisar( pChave : string ) : string; Override;
-    function Carregar( pPos : Integer ): TObject;   Override;
-    function TotalDados: Integer;                   Override;
+    procedure Salvar(pObj: TObject); override;
+    procedure Excluir(pObj: TObject); override;
+    function Pesquisar(pChave: string): string; override;
+    function Carregar(pPos: integer): TObject; override;
+    function TotalDados: integer; override;
   end;
 
 implementation
@@ -40,45 +41,55 @@ end;
 
 procedure DaoPaises.Salvar(pObj: TObject);
 var
-  pPos : Integer;
-  pPais: String;
+  pPos: integer;
+  pPais: string;
+  umPais: Paises;
 begin
-  if Paises(pObj).GetCodigo = 0 then
+  umPais := Paises(pObj);
+  if umPais.GetCodigo = 0 then
   begin
-    Paises(pObj).setCodigo(aColPaises.GetTam + 1);
-    pPais := Paises(pObj).GetPais;
-    pPos  := aColPaises.Pesquisa(pPais, False);
+    umPais.setCodigo(aColPaises.GetTam + 1);
+    pPais := umPais.GetPais;
+    pPos := aColPaises.Pesquisa(pPais, False);
     if pPos <> 0 then
-      aColPaises.Insere( pObj, pPos );
+      aColPaises.Insere(umPais, pPos);
   end;
-  inherited Salvar( pObj );
+  aColPaises.SalvaArq;
+  inherited Salvar(pObj);
 end;
 
 procedure DaoPaises.Excluir(pObj: TObject);
 var
-  pPos : Integer;
+  pPos: integer;
 begin
   pPos := 1; //provisório
-  aColPaises.Remove( pObj, pPos );
-//  inherited Excluir(pObj);
+  aColPaises.Remove(pObj, pPos);
+  //  inherited Excluir(pObj);
 end;
 
 function DaoPaises.Pesquisar(pChave: string): string;
+var
+  mRes: string;
+  mPos, Code: Integer;
 begin
-  Result := IntToStr( aColPaises.Pesquisa( pChave, False ) );
-//  Result:= inherited Pesquisar(pChave);
+  Val(mRes, mPos, Code);
+  if Code = 0 then
+    Result := IntToStr(aColPaises.Pesquisa(StrToInt( pChave _, False));
+  Result := IntToStr(aColPaises.Pesquisa(pChave, False));
+
+  //  Result:= inherited Pesquisar(pChave);
 end;
 
-function DaoPaises.Carregar(pPos: Integer): TObject;
+function DaoPaises.Carregar(pPos: integer): TObject;
 begin
-  Result := aColPaises.CarregaObj( pPos );
+  Result := aColPaises.CarregaObj(pPos);
   // Result:=inherited Carregar(pPos);
 end;
 
-function DaoPaises.TotalDados: Integer;
+function DaoPaises.TotalDados: integer;
 begin
-  Result:=inherited TotalDados;
+  //  Result:=inherited TotalDados;
+  Result := aColPaises.GetTam;
 end;
 
 end.
-

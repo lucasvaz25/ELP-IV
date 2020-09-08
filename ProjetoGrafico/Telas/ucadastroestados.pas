@@ -56,9 +56,14 @@ begin
 end;
 
 procedure TCadastroEstados.btn_PesquisarClick(Sender: TObject);
+var
+  mAux: string;
 begin
+  mAux := aConsultaPaises.btn_Sair.Caption;
+  aConsultaPaises.btn_Sair.Caption := 'Selecionar';
   aConsultaPaises.ConhecaObj(oEstado.GetoPais, aCtrlEstado.getCtrlPaises);
   aConsultaPaises.ShowModal;
+  aConsultaPaises.btn_Sair.Caption := mAux;;
   edt_Pais.Text := oEstado.GetoPais.GetPais;
 end;
 
@@ -94,7 +99,7 @@ begin
     oEstado.GetoPais.SetPais(Edt_Pais.Text);
     oEstado.SetoPais(oEstado.GetoPais);
     oEstado.SetDataCad(DateToStr(Now));
-    aCtrlEstado.Salvar(oEstado);
+    aCtrlEstado.Salvar(oEstado.Clone);
     inherited Salvar;
   end;
 end;

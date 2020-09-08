@@ -31,7 +31,7 @@ type
     procedure CarregaEdt;     Override;
     procedure BloqueiEdt;     Override;
     procedure DesbloqueiaEdt; Override;
-    procedure ConhecaObj(pObj : TObject; pCtrl : TObject );
+    procedure ConhecaObj(pObj : TObject; pCtrl : TObject ); Override;
   end;
 
 var
@@ -84,7 +84,7 @@ begin
     oPais.SetDDI( Edt_DDI.Text);
     oPais.SetSigla( Edt_Sigla.Text );
     oPais.SetDataCad( DateToStr( Now ) );
-    aCtrlPais.Salvar( oPais );
+    aCtrlPais.Salvar( oPais.clone );
     inherited Salvar;
   end;
 end;

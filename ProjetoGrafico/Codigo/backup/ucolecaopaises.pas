@@ -17,7 +17,8 @@ type
   public
     constructor CrieObj;      Override;
     destructor Destrua_se;    Override;
-    function Pesquisa(pChave: string; pQuero: boolean): integer;
+    function Pesquisa(pChave: string; pQuero: boolean): integer;  Overload;
+    function Pesquisa(pChave : Integer; pQuero: Boolean): Integer; Overload;
     procedure SalvaArq;
     procedure LerArq;
   end;
@@ -34,7 +35,7 @@ end;
 
 destructor ColecaoPaises.Destrua_se;
 begin
-  Self.SalvaArq;
+
   inherited;
 end;
 
@@ -67,6 +68,35 @@ begin
       Result := 0
     else
       Result := I;
+  end;
+end;
+
+function ColecaoPaises.Pesquisa(pChave: Integer; pQuero: Booelan): Integer;
+var
+  I: Integer;
+  Pais : Paises;
+begin
+  if VerColVazia then
+    result := 1
+  else
+  begin
+    I := 1;
+    Pais := Paises(Item[I]);
+    While ( I <= Tam ) and ( pChave <> Pais.GetCodigo ) do
+    begin
+      I := I + 1;
+      Pais := Paises( Item[I] );
+    end;
+    if pQuero then
+      if pChave = Pais.GetCodigo then
+        Result := I
+      else
+        Result := 0
+    else
+      if pChave = Pais.GetCodigo then
+        Result := 0
+      else
+        Result := 1;
   end;
 end;
 
@@ -110,6 +140,7 @@ begin
     umPais := Paises.CrieInit(mCodigo, mPais, mDDI, mSigla, mDataCad);
     Self.InsereFim(umPais);
   end;
+  Close(Arq);
 end;
 
 end.

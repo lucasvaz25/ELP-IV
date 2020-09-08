@@ -115,7 +115,7 @@ begin
     umEstado.SetEstado(mEstado);
     umaCidade := Cidades.CrieInit(mCodigo, umEstado, mCidade, mDDD, mSigla, mDataCad);
     umEstado.Destrua_se;
-    Self.InsereFim(umCidade);
+    Self.InsereFim(umaCidade);
   end;
   Close(Arq);
 end;

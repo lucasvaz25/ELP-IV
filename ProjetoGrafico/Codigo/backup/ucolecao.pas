@@ -43,7 +43,7 @@ var
   I: integer;
 begin
   for I := 1 to Tam do
-    FreeAndNil(Item[I]);
+    (Item[I]).FreeInstance;
 end;
 
 procedure Colecao.InsereFim(pObj: TObject);

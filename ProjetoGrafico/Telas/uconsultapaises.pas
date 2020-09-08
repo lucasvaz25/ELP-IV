@@ -15,7 +15,6 @@ type
   TConsultaPaises = class(TConsulta)
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure FormShow(Sender: TObject);
   private
     oCadastroPaises : TCadastroPaises;
     oPais : Paises;
@@ -29,6 +28,7 @@ type
     procedure SetFormCadastro( pObj : TObject ); Override;
     procedure ConhecaObj( pObj : TObject; pCtrl :TObject ); Override;
     procedure CarregaListView;  Override;
+    function Selecionar: integer;
   end;
 
 var
@@ -50,13 +50,12 @@ begin
 
 end;
 
-procedure TConsultaPaises.FormShow(Sender: TObject);
-begin
-  Self.CarregaListView;
-end;
-
 procedure TConsultaPaises.Sair;
 begin
+  if Self.btn_Sair.Caption = 'Selecionar' then
+  begin
+     oPais := Paises(ListView1.Selected);
+  end;
   inherited Sair;
 end;
 
@@ -71,6 +70,7 @@ end;
 
 procedure TConsultaPaises.Alterar;
 begin
+  oPais := Paises( aCtrlPais.Carregar( Self.Selecionar ) );
   oCadastroPaises.ConhecaObj( oPais, aCtrlPais );
   oCadastroPaises.LimparEdt;
   oCadastroPaises.CarregaEdt;
@@ -83,6 +83,7 @@ procedure TConsultaPaises.Excluir;
 var
   Aux : String;
 begin
+  oPais := Paises( aCtrlPais.Carregar( Self.Selecionar ) );
   oCadastroPaises.ConhecaObj( oPais, aCtrlPais );
   oCadastroPaises.LimparEdt;
   oCadastroPaises.CarregaEdt;
@@ -98,6 +99,7 @@ end;
 
 procedure TConsultaPaises.Pesquisar;
 begin
+  Self.CarregaListView;
   inherited Pesquisar;
 end;
 
@@ -111,6 +113,7 @@ procedure TConsultaPaises.ConhecaObj(pObj: TObject; pCtrl :TObject);
 begin
   oPais := Paises( pObj );
   aCtrlPais := CtrlPaises(  pCtrl );
+  Self.Pesquisar();
 end;
 
 procedure TConsultaPaises.CarregaListView;
@@ -131,6 +134,23 @@ begin
     LvItem.SubItems.Add(umPais.GetSigla);
     LvItem.SubItems.Add(umPais.GetDataCad);
   end;
+end;
+
+function TConsultaPaises.Selecionar: integer;
+var
+  I, Tam: integer;
+  Achei: Boolean;
+begin
+  Tam := aCtrlPais.TotalDados;
+  Achei := False;
+  I := 0;
+  While ( I < Tam ) and not achei do
+  begin
+    if self.ListView1.Items.Item[I].Checked then
+      Achei := True;
+    I := I + 1;
+  end;
+  Result := I;
 end;
 
 end.

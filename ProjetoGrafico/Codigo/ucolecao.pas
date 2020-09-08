@@ -63,7 +63,7 @@ begin
     Tam := Tam + 1;
     for I := Tam downto pPos + 1 do
     begin
-      Item[I] := Item[I + 1];
+      Item[I] := Item[I - 1];
     end;
     Item[pPos] := pObj;
   end;

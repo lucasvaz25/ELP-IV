@@ -5,23 +5,25 @@ unit uControllerPaises;
 interface
 
 uses
-  Classes, SysUtils, uController, uDaoPaises;
+  Classes, SysUtils, uController, uDaoPaises, uPaises;
+
 type
 
   { CtrlPaises }
 
-  CtrlPaises = Class (Controller)
-    private
-    protected
-      aDaoPais : DaoPaises;
-    public
-      constructor CrieObj;
-      destructor Destrua_se;
-      procedure Salvar( pObj : TObject );             Override;
-      procedure Excluir( pObj : TObject );            Override;
-      function Pesquisar( pChave : string ) : string; Override;
-      function Carregar( pPos : Integer ) : TObject;  Override;
-      function TotalDados: Integer;                   Override;
+  CtrlPaises = class(Controller)
+  private
+  protected
+    aDaoPais: DaoPaises;
+  public
+    constructor CrieObj;
+    destructor Destrua_se;
+    procedure Salvar(pObj: TObject); override;
+    procedure Excluir(pObj: TObject); override;
+    function Pesquisar(pChave: string): string; override;
+    function Duplicado(pCodigo: integer; pPais: string): string;
+    function Carregar(pPos: integer): TObject; override;
+    function TotalDados: integer; override;
   end;
 
 implementation
@@ -40,8 +42,8 @@ end;
 
 procedure CtrlPaises.Salvar(pObj: TObject);
 begin
-  aDaoPais.Salvar( pObj );
-//  inherited Salvar(pObj);
+  aDaoPais.Salvar(pObj);
+  //  inherited Salvar(pObj);
 end;
 
 procedure CtrlPaises.Excluir(pObj: TObject);
@@ -53,35 +55,67 @@ end;
 function CtrlPaises.Pesquisar(pChave: string): string;
 var
   mRes: string;
-  mPos, Code: Integer;
+  mPos, Code: integer;
 begin
   mPos := 1;
   mRes := aDaoPais.Pesquisar(pChave);
-  Val( mRes, mPos, Code);
+  Val(mRes, mPos, Code);
   if code <> 0 then
     Result := 'Erro'
   else
-    begin
-      mPos := StrToInt(mRes);
-      if mPos = 0 then
-        result := 'O nome já existe!'
-        else
-          result := '';
-    end;
+  begin
+    mPos := StrToInt(mRes);
+    if mPos = 0 then
+      Result := 'O nome já existe!'
+    else
+      Result := '';
+  end;
   //  Result:=inherited Pesquisar(pChave);
 end;
 
-function CtrlPaises.Carregar(pPos: Integer): TObject;
+function CtrlPaises.Duplicado(pCodigo: integer; pPais: string): string;
+var
+  mRes: string;
+  mPos, Code: integer;
+  mPais: Paises;
+begin
+  mPos := 1;
+  if pCodigo = 0 then
+  begin
+    mRes := aDaoPais.Pesquisar(pPais, False); //insert
+    Val(mRes, mPos, Code);
+    if code <> 0 then
+      Result := 'Erro'
+    else
+    begin
+      mPos := StrToInt(mRes);
+      if mPos = 0 then
+        Result := 'O nome já existe!'
+      else
+        Result := '';
+    end;
+  end
+  else
+  begin
+    mRes := aDaoPais.Pesquisar(pPais, True); //update or delete
+    mPais := Paises(aDaoPais.Carregar(StrToInt(mRes)));
+    if pCodigo <> mPais.GetCodigo then
+      Result := 'O nome já existe com o codigo = ' + IntToStr(mPais.GetCodigo)
+    else
+      Result := '';
+  end;
+end;
+
+function CtrlPaises.Carregar(pPos: integer): TObject;
 begin
   Result := aDaoPais.Carregar(pPos);
   //  Result:=inherited Carregar(pPos);
 end;
 
-function CtrlPaises.TotalDados: Integer;
+function CtrlPaises.TotalDados: integer;
 begin
-//  Result:=inherited TotalDados;
+  //  Result:=inherited TotalDados;
   Result := aDaoPais.TotalDados;
 end;
 
 end.
-

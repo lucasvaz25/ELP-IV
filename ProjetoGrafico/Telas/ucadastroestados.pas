@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, uCadastro,
-  uConsultaPaises, uEstados, uControllerEstados;
+  uConsultaPaises, uEstados, uControllerEstados, uPaises;
 
 type
 
@@ -63,7 +63,8 @@ begin
   aConsultaPaises.btn_Sair.Caption := 'Selecionar';
   aConsultaPaises.ConhecaObj(oEstado.GetoPais, aCtrlEstado.getCtrlPaises);
   aConsultaPaises.ShowModal;
-  aConsultaPaises.btn_Sair.Caption := mAux;;
+  oEstado.SetoPais( Paises( aConsultaPaises.RetornaPaises ) );
+  aConsultaPaises.btn_Sair.Caption := mAux;
   edt_Pais.Text := oEstado.GetoPais.GetPais;
 end;
 

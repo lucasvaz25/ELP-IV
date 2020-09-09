@@ -61,7 +61,7 @@ begin
         Result := 0;
     end
     else
-    if I > Tam then
+    if I >= Tam then
       Result := I
     else
     if pChave = Paises(Item[I]).GetPais then

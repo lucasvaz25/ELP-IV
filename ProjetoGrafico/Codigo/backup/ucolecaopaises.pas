@@ -71,7 +71,7 @@ begin
   end;
 end;
 
-function ColecaoPaises.Pesquisa(pChave: Integer; pQuero: Booelan): Integer;
+function ColecaoPaises.Pesquisa(pChave: Integer; pQuero: Boolean): Integer;
 var
   I: Integer;
   Pais : Paises;

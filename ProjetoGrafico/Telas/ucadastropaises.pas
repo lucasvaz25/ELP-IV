@@ -54,9 +54,12 @@ begin
   end
   else
   begin
-    msg := aCtrlPais.Pesquisar( Self.edt_Pais.Text );
+    msg := aCtrlPais.Duplicado( StrToInt( Self.edt_Codigo.Text ), Self.edt_Pais.Text );
     if msg <> '' then
+    begin
       showmessage(msg);
+      edt_Pais.SetFocus;;
+    end;
   end;
 end;
 

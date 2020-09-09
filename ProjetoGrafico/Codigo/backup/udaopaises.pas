@@ -20,7 +20,8 @@ type
     destructor Destrua_se;
     procedure Salvar(pObj: TObject); override;
     procedure Excluir(pObj: TObject); override;
-    function Pesquisar(pChave: string): string; override;
+    function Pesquisar(pChave: string): string; override; Overload;
+    function Pesquisar(pChave: string; pQuero: Boolean): string; Overload;
     function Carregar(pPos: integer): TObject; override;
     function TotalDados: integer; override;
   end;
@@ -74,10 +75,13 @@ var
 begin
   Val(mRes, mPos, Code);
   if Code = 0 then
-    Result := IntToStr(aColPaises.Pesquisa(StrToInt( pChave _, False));
-  Result := IntToStr(aColPaises.Pesquisa(pChave, False));
+    Result := IntToStr(aColPaises.Pesquisa(StrToInt( pChave ), False));
+    //  Result:= inherited Pesquisar(pChave);
+end;
 
-  //  Result:= inherited Pesquisar(pChave);
+function DaoPaises.Pesquisar(pChave: string; pQuero: Boolean): string;
+begin
+  Result := IntToStr(aColPaises.Pesquisa(pChave, pQuero);
 end;
 
 function DaoPaises.Carregar(pPos: integer): TObject;

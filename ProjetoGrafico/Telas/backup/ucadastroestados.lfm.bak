@@ -22,7 +22,7 @@ inherited CadastroEstados: TCadastroEstados
   object edt_Pais: TEdit[8]
     Left = 40
     Height = 23
-    Top = 177
+    Top = 176
     Width = 360
     CharCase = ecUppercase
     TabOrder = 3

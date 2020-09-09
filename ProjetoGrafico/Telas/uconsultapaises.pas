@@ -29,6 +29,7 @@ type
     procedure ConhecaObj( pObj : TObject; pCtrl :TObject ); Override;
     procedure CarregaListView;  Override;
     function Selecionar: integer;
+    function RetornaPaises : TObject;
   end;
 
 var
@@ -52,10 +53,6 @@ end;
 
 procedure TConsultaPaises.Sair;
 begin
-  if Self.btn_Sair.Caption = 'Selecionar' then
-  begin
-     oPais := Paises(ListView1.Selected);
-  end;
   inherited Sair;
 end;
 
@@ -151,6 +148,12 @@ begin
     I := I + 1;
   end;
   Result := I;
+end;
+
+function TConsultaPaises.RetornaPaises: TObject;
+begin
+  oPais := Paises( aCtrlPais.Carregar( Self.Selecionar ) );
+  Result := oPais.Clone;
 end;
 
 end.

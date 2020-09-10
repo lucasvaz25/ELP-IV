@@ -2,7 +2,11 @@ inherited ConsultaCidades: TConsultaCidades
   Caption = 'Consulta Cidades'
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  inherited btn_Pesquisar: TButton
+    OnClick = btn_PesquisarClick
+  end
   inherited ListView1: TListView
+    Checkboxes = True
     Columns = <    
       item
         Caption = 'Código'

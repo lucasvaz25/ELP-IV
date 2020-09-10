@@ -75,6 +75,7 @@ end;
 
 procedure TConsultaCidades.Alterar;
 begin
+  aCidade := Cidades( aCtrlCidade.Carregar( Self.Selecionar ) );
   oCadastroCidades.ConhecaObj(aCidade, aCtrlCidade);
   oCadastroCidades.LimparEdt;
   oCadastroCidades.CarregaEdt;

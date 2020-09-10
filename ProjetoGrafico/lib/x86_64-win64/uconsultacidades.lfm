@@ -6,6 +6,7 @@ inherited ConsultaCidades: TConsultaCidades
     OnClick = btn_PesquisarClick
   end
   inherited ListView1: TListView
+    Checkboxes = True
     Columns = <    
       item
         Caption = 'Código'

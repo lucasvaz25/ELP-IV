@@ -75,6 +75,7 @@ end;
 
 procedure TConsultaCidades.Alterar;
 begin
+  aCidade := Cidades( aCtrlCidades.Carregar( Self.Selecionar ) );
   oCadastroCidades.ConhecaObj(aCidade, aCtrlCidade);
   oCadastroCidades.LimparEdt;
   oCadastroCidades.CarregaEdt;
@@ -142,7 +143,7 @@ var
   I, Tam: integer;
   Achei: Boolean;
 begin
-  Tam := aCtrlEstado.TotalDados;
+  Tam := aCtrlCidade.TotalDados;
   Achei := False;
   I := 0;
   While ( I < Tam ) and not achei do

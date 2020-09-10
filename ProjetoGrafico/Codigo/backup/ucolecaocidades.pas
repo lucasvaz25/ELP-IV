@@ -35,6 +35,7 @@ end;
 
 destructor ColecaoCidades.Destrua_se;
 begin
+//  Self.SalvaArq;
   inherited;
 end;
 
@@ -121,13 +122,12 @@ end;
 procedure ColecaoCidades.LerArq;
 var
   Arq: TextFile;
-  I, mCodigo: integer;
+  I, mCodigo, mCodEstado: integer;
   mCidade: string[50];
   mDDD: string[3];
   mSigla: string[3];
   mEstado: string[50];
   mDataCad: string[10];
-  umEstado: Estados;
   umaCidade: Cidades;
 begin
   Assign(Arq, 'Cidades.Dat');
@@ -138,12 +138,14 @@ begin
     ReadLn(Arq, mCidade);
     ReadLn(Arq, mDDD);
     ReadLn(Arq, mSigla);
-    ReadLn(Arq, mEstado);
+    ReadLn(Arq, mCodEstado);
     ReadLn(Arq, mDataCad);
-    umEstado := Estados.CrieObj;
-    umEstado.SetEstado(mEstado);
-    umaCidade := Cidades.CrieInit(mCodigo, umEstado, mCidade, mDDD, mSigla, mDataCad);
-    umEstado.Destrua_se;
+    umaCidade := Cidades.CrieObj;
+    umaCidade.SetCodigo(mCodigo);
+    umaCidade.SetDDD(mDDD);
+    umaCidade.SetSigla(mSigla);
+    umaCidade.GetoEstado.SetCodigo(mCodEstado);
+    umaCidade.SetDataCad(mDataCad);
     Self.InsereFim(umaCidade);
   end;
   Close(Arq);

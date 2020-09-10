@@ -112,7 +112,7 @@ begin
     WriteLn(Arq, Estados(Item[I]).GetCodigo);
     WriteLn(Arq, Estados(Item[I]).GetEstado);
     WriteLn(Arq, Estados(Item[I]).GetUF);
-    WriteLn(Arq, Estados(Item[I]).GetoPais.GetPais);
+    WriteLn(Arq, Estados(Item[I]).GetoPais.GetCodigo);
     WriteLn(Arq, Estados(Item[I]).GetDataCad);
   end;
   Close(Arq);
@@ -121,13 +121,11 @@ end;
 procedure ColecaoEstados.LerArq;
 var
   Arq: TextFile;
-  I, mCodigo: integer;
+  I, mCodigo, mCodPais: integer;
   mEstado: string[50];
   mUF: string[2];
-  mPais: string[50];
   mDataCad: string[10];
   umEstado: Estados;
-  umPais: Paises;
 begin
   Assign(Arq, 'Estados.Dat');
   Reset(Arq);
@@ -136,12 +134,15 @@ begin
     ReadLn(Arq, mCodigo);
     ReadLn(Arq, mEstado);
     ReadLn(Arq, mUF);
-    ReadLn(Arq, mPais);
+    ReadLn(Arq, mCodPais);
     ReadLn(Arq, mDataCad);
-    umPais := Paises.CrieObj;
-    umPais.SetPais(mPais);
-    umEstado := Estados.CrieInit(mCodigo, umPais, mEstado, mUF, mDataCad);
-    umPais.Destrua_se;
+    umEstado := Estados.CrieObj;
+    umEstado.SetCodigo(mCodigo);
+    umEstado.SetEstado(mEstado);
+    umEstado.SetUF(mUF);
+    umEstado.GetoPais.SetCodigo(mCodPais);
+    umEstado.SetDataCad(mDataCad);
+
     Self.InsereFim(umEstado);
   end;
   Close(Arq);

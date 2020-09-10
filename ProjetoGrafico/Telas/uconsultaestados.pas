@@ -29,6 +29,8 @@ type
     procedure SetFormCadastro(pObj: TObject); override;
     procedure ConhecaObj(pObj: TObject; pCtrl: TObject); override;
     procedure CarregaListView; override;
+    function Selecionar: integer;
+    function RetornaObj : TObject;  Override;
 
   end;
 
@@ -112,6 +114,7 @@ procedure TConsultaEstados.ConhecaObj(pObj: TObject; pCtrl: TObject);
 begin
   oEstado := Estados(pObj);
   aCtrlEstado := CtrlEstados(pCtrl);
+  Self.Pesquisar();
 end;
 
 procedure TConsultaEstados.CarregaListView;
@@ -133,6 +136,29 @@ begin
     LvItem.SubItems.Add(umEstado.GetDataCad);
   end;
   //  inherited CarregaListView;
+end;
+
+function TConsultaEstados.Selecionar: integer;
+var
+  I, Tam: integer;
+  Achei: Boolean;
+begin
+  Tam := aCtrlEstado.TotalDados;
+  Achei := False;
+  I := 0;
+  While ( I < Tam ) and not achei do
+  begin
+    if self.ListView1.Items.Item[I].Checked then
+      Achei := True;
+    I := I + 1;
+  end;
+  Result := I;
+end;
+
+function TConsultaEstados.RetornaObj: TObject;
+begin
+  oEstado := Estados( aCtrlEstado.Carregar( Self.Selecionar ) );
+  Result := oEstado.Clone;
 end;
 
 end.

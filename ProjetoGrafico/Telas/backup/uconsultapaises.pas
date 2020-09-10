@@ -29,7 +29,7 @@ type
     procedure ConhecaObj( pObj : TObject; pCtrl :TObject ); Override;
     procedure CarregaListView;  Override;
     function Selecionar: integer;
-    function RetornaPaises : TObject;
+    function RetornaObj : TObject; Override;
   end;
 
 var
@@ -153,7 +153,7 @@ end;
 function TConsultaPaises.RetornaPaises: TObject;
 begin
   oPais := Paises( aCtrlPais.Carregar( Self.Selecionar ) );
-  Result := oPais;
+  Result := oPais.Clone;
 end;
 
 end.

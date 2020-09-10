@@ -17,7 +17,8 @@ type
   public
     constructor CrieObj; override;
     destructor Destrua_se; override;
-    function Pesquisa(pChave: string; pQuero: boolean): integer;
+    function Pesquisa(pChave: string; pQuero: boolean): integer;  Overload;
+    function Pesquisa(pChave : Integer; pQuero: Boolean): Integer; Overload;
     procedure SalvaArq;
     procedure LerArq;
   end;
@@ -34,7 +35,6 @@ end;
 
 destructor ColecaoCidades.Destrua_se;
 begin
-  Self.SalvaArq;
   inherited;
 end;
 
@@ -70,6 +70,35 @@ begin
   end;
 end;
 
+function ColecaoCidades.Pesquisa(pChave: Integer; pQuero: Boolean): Integer;
+var
+  I: Integer;
+  Cidade : Cidades;
+begin
+  if VerColVazia then
+    result := 1
+  else
+  begin
+    I := 1;
+    Cidade := Cidades(Item[I]);
+    While ( I <= Tam ) and ( pChave <> Cidade.GetCodigo ) do
+    begin
+      I := I + 1;
+      Cidade := Cidades( Item[I] );
+    end;
+    if pQuero then
+      if pChave = Cidade.GetCodigo then
+        Result := I
+      else
+        Result := 0
+    else
+      if pChave = Cidade.GetCodigo then
+        Result := 0
+      else
+        Result := 1;
+  end;
+end;
+
 procedure ColecaoCidades.SalvaArq;
 var
   Arq: TextFile;
@@ -83,7 +112,7 @@ begin
     WriteLn(Arq, Cidades(Item[I]).GetCidade);
     WriteLn(Arq, Cidades(Item[I]).GetDDD);
     WriteLn(Arq, Cidades(Item[I]).GetSigla);
-    WriteLn(Arq, Cidades(Item[I]).GetoEstado.GetEstado);
+    WriteLn(Arq, Cidades(Item[I]).GetoEstado.GetCodigo);
     WriteLn(Arq, Cidades(Item[I]).GetDataCad);
   end;
   Close(Arq);
@@ -103,7 +132,7 @@ var
 begin
   Assign(Arq, 'Cidades.Dat');
   Reset(Arq);
-  while (not EOF(Arq)) do
+  while (not eof(Arq)) do
   begin
     ReadLn(Arq, mCodigo);
     ReadLn(Arq, mCidade);

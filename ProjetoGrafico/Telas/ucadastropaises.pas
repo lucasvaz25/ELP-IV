@@ -58,7 +58,7 @@ begin
     if msg <> '' then
     begin
       showmessage(msg);
-      edt_Pais.SetFocus;;
+      edt_Pais.SetFocus;
     end;
   end;
 end;

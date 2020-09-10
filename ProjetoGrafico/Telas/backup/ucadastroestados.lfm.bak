@@ -17,6 +17,7 @@ inherited CadastroEstados: TCadastroEstados
     Top = 112
     Width = 352
     CharCase = ecUppercase
+    OnExit = edt_EstadoExit
     TabOrder = 1
   end
   object edt_Pais: TEdit[8]

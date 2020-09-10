@@ -35,6 +35,7 @@ type
     procedure SetFormCadastro( pObj : TObject ); Virtual;
     procedure ConhecaObj(pObj: TObject; pCtrl: TObject);   Virtual;
     procedure CarregaListView;  Virtual;
+    Function RetornaObj: TObject; Virtual;
 
   end;
 
@@ -108,6 +109,11 @@ begin
 end;
 
 procedure TConsulta.CarregaListView;
+begin
+
+end;
+
+function TConsulta.RetornaObj: TObject;
 begin
 
 end;

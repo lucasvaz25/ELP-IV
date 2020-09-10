@@ -13,6 +13,7 @@ type
   { TConsultaCidades }
 
   TConsultaCidades = class(TConsulta)
+    procedure btn_PesquisarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
@@ -28,6 +29,8 @@ type
     procedure SetFormCadastro(pObj: TObject); override;
     procedure ConhecaObj(pObj: TObject; pCtrl: TObject); override;
     procedure CarregaListView; override;
+    function Selecionar: integer;
+    function RetornaObj: TObject; Override;
   end;
 
 var
@@ -38,6 +41,12 @@ implementation
 {$R *.lfm}
 
 { TConsultaCidades }
+
+procedure TConsultaCidades.btn_PesquisarClick(Sender: TObject);
+begin
+  inherited;
+  Self.CarregaListView;
+end;
 
 procedure TConsultaCidades.FormCreate(Sender: TObject);
 begin
@@ -126,6 +135,29 @@ begin
     LvItem.SubItems.Add(umaCidade.GetoEstado.GetEstado);
     LvItem.SubItems.Add(umaCidade.GetDataCad);
   end;
+end;
+
+function TConsultaCidades.Selecionar: integer;
+var
+  I, Tam: integer;
+  Achei: Boolean;
+begin
+  Tam := aCtrlEstado.TotalDados;
+  Achei := False;
+  I := 0;
+  While ( I < Tam ) and not achei do
+  begin
+    if self.ListView1.Items.Item[I].Checked then
+      Achei := True;
+    I := I + 1;
+  end;
+  Result := I;
+end;
+
+function TConsultaCidades.RetornaObj: TObject;
+begin
+  aCidade := Cidades( aCtrlCidade.Carregar( Self.Selecionar ) );
+  Result := aCidade.Clone;
 end;
 
 end.

@@ -57,8 +57,10 @@ begin
   aCidade := Cidades.CrieObj;
 
   aCtrlPais := CtrlPaises.CrieObj;
-  aCtrlEstado := CtrlEstado.CrieObj;
-  aCtrlCidade := CtrlCidade.CrieObj;
+  aCtrlEstado := CtrlEstados.CrieObj;
+  aCtrlCidade := CtrlCidades.CrieObj;
+
+  aCtrlEstado.setCtrlPaises(aCtrlPais);
 end;
 
 procedure TGerente.FormDestroy(Sender: TObject);

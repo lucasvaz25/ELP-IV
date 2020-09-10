@@ -20,7 +20,8 @@ type
     destructor Destrua_se;
     procedure Salvar(pObj: TObject); override;
     procedure Excluir(pObj: TObject); override;
-    function Pesquisar(pChave: string): string; override;
+    function Pesquisar(pChave: string): string; override; Overload;
+    function Pesquisar(pChave: string; pQuero: Boolean): string; Overload;
     function Carregar(pPos: integer): TObject; override;
     function TotalDados: integer; override;
   end;
@@ -47,11 +48,12 @@ begin
   if Estados(pObj).GetCodigo = 0 then
   begin
     Estados(pObj).setCodigo(aColEstado.GetTam + 1);
-    pEstado := Estado(pObj).GetEstado;
+    pEstado := Estados(pObj).GetEstado;
     pPos := aColEstado.Pesquisa(pEstado, False);
     if pPos <> 0 then
       aColEstado.Insere(pObj, pPos);
   end;
+  aColEstado.SalvaArq;
   inherited Salvar(pObj);
 end;
 
@@ -65,9 +67,19 @@ begin
 end;
 
 function DaoEstados.Pesquisar(pChave: string): string;
+var
+  mRes: string;
+  mPos, Code: Integer;
 begin
-  Result := IntToStr(aColEstado.Pesquisa(pChave, False));
+  Val(mRes, mPos, Code);
+  if Code = 0 then
+    Result := IntToStr(aColEstado.Pesquisa(StrToInt( pChave ), False));
   //  Result := inherited Pesquisar(pChave);
+end;
+
+function DaoEstados.Pesquisar(pChave: string; pQuero: Boolean): string;
+begin
+  Result := IntToStr(aColPaises.Pesquisa(pChave, pQuero));
 end;
 
 function DaoEstados.Carregar(pPos: integer): TObject;

@@ -6,7 +6,11 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, uCadastro,
-  uConsultaPaises, uEstados, uControllerEstados, uPaises;
+  uConsultaPaises,
+  uControllerEstados,
+  uControllerPaises,
+  uEstados,
+  uPaises;
 
 type
 
@@ -21,6 +25,7 @@ type
     lbl_Estado: TLabel;
     Label3: TLabel;
     procedure btn_PesquisarClick(Sender: TObject);
+    procedure edt_EstadoExit(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
@@ -63,9 +68,29 @@ begin
   aConsultaPaises.btn_Sair.Caption := 'Selecionar';
   aConsultaPaises.ConhecaObj(oEstado.GetoPais, aCtrlEstado.getCtrlPaises);
   aConsultaPaises.ShowModal;
-  oEstado.SetoPais := Paises( aConsultaPaises.RetornaPaises );
+  oEstado.SetoPais(Paises(aConsultaPaises.RetornaObj));
   aConsultaPaises.btn_Sair.Caption := mAux;
   edt_Pais.Text := oEstado.GetoPais.GetPais;
+end;
+
+procedure TCadastroEstados.edt_EstadoExit(Sender: TObject);
+var
+  msg: string;
+begin
+  if Self.edt_Estado.Text = EmptyStr then
+  begin
+    ShowMessage('Campo Estado é obrigatório!');
+    Self.edt_Estado.SetFocus;
+  end
+  else
+  begin
+    msg := aCtrlEstado.Duplicado(StrToInt(Self.edt_Codigo.Text), Self.edt_Estado.Text);
+    if msg <> '' then
+    begin
+      ShowMessage(msg);
+      edt_Estado.SetFocus;
+    end;
+  end;
 end;
 
 procedure TCadastroEstados.FormDestroy(Sender: TObject);
@@ -157,4 +182,3 @@ begin
 end;
 
 end.
-

@@ -102,5 +102,15 @@ begin
 
 end;
 
+procedure TConsulta.ConhecaObj(pObj: TObject; pCtrl: TObject);
+begin
+
+end;
+
+procedure TConsulta.CarregaListView;
+begin
+
+end;
+
 end.
 

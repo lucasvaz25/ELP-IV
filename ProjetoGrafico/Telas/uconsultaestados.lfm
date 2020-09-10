@@ -4,6 +4,7 @@ inherited ConsultaEstados: TConsultaEstados
   OnDestroy = FormDestroy
   OnShow = FormShow
   inherited ListView1: TListView
+    Checkboxes = True
     Columns = <    
       item
         Caption = 'Código'

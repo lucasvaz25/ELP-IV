@@ -20,7 +20,8 @@ type
     destructor Destrua_se;
     procedure Salvar(pObj: TObject); override;
     procedure Excluir(pObj: TObject); override;
-    function Pesquisar(pChave: string): string; override;
+    function Pesquisar(pChave: string): string; override; overload;
+    function Pesquisar(pChave: string; pQuero: boolean): string; overload;
     function Carregar(pPos: integer): TObject; override;
     function TotalDados: integer; override;
   end;
@@ -52,6 +53,7 @@ begin
     if pPos <> 0 then
       aColCidade.Insere(pObj, pPos);
   end;
+  aColCidade.SalvaArq;
   inherited Salvar(pObj);
 end;
 
@@ -65,9 +67,19 @@ begin
 end;
 
 function DaoCidades.Pesquisar(pChave: string): string;
+var
+  mRes: string;
+  mPos, Code: Integer;
+begin
+  Val(mRes, mPos, Code);
+  if Code = 0 then
+    Result := IntToStr(aColCidade.Pesquisa(StrToInt( pChave ), False));
+  //  Result := inherited Pesquisar(pChave);
+end;
+
+function DaoCidades.Pesquisar(pChave: string; pQuero: boolean): string;
 begin
   Result := IntToStr(aColCidade.Pesquisa(pChave, False));
-  //  Result := inherited Pesquisar(pChave);
 end;
 
 function DaoCidades.Carregar(pPos: integer): TObject;

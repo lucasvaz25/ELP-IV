@@ -17,7 +17,8 @@ type
   public
     constructor CrieObj; override;
     destructor Destrua_se; override;
-    function Pesquisa(pChave: string; pQuero: boolean): integer;
+    function Pesquisa(pChave: string; pQuero: boolean): integer;  Overload;
+    function Pesquisa(pChave : Integer; pQuero: Boolean): Integer; Overload;
     procedure SalvaArq;
     procedure LerArq;
   end;
@@ -70,6 +71,35 @@ begin
   end;
 end;
 
+function ColecaoEstados.Pesquisa(pChave: Integer; pQuero: Boolean): Integer;
+var
+  I: Integer;
+  Estado : Estados;
+begin
+  if VerColVazia then
+    result := 1
+  else
+  begin
+    I := 1;
+    Estado := Estados(Item[I]);
+    While ( I <= Tam ) and ( pChave <> Estado.GetCodigo ) do
+    begin
+      I := I + 1;
+      Estado := Estados( Item[I] );
+    end;
+    if pQuero then
+      if pChave = Estado.GetCodigo then
+        Result := I
+      else
+        Result := 0
+    else
+      if pChave = Estado.GetCodigo then
+        Result := 0
+      else
+        Result := 1;
+  end;
+end;
+
 procedure ColecaoEstados.SalvaArq;
 var
   Arq: TextFile;
@@ -108,7 +138,7 @@ begin
     ReadLn(Arq, mUF);
     ReadLn(Arq, mPais);
     ReadLn(Arq, mDataCad);
-    umPais := Paises.CriaObj;
+    umPais := Paises.CrieObj;
     umPais.SetPais(mPais);
     umEstado := Estados.CrieInit(mCodigo, umPais, mEstado, mUF, mDataCad);
     umPais.Destrua_se;

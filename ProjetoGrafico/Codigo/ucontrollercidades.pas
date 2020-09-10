@@ -5,7 +5,9 @@ unit uControllerCidades;
 interface
 
 uses
-  Classes, SysUtils, uController, uControllerEstados, uDaoCidades;
+  Classes, SysUtils, uController, uControllerEstados, uDaoCidades,
+  uCidades,
+  uEstados;
 
 type
 
@@ -24,8 +26,10 @@ type
     procedure Excluir(pObj: TObject); override;
     function Pesquisar(pChave: string): string; override;
     function Carregar(pPos: integer): TObject; override;
+    function Duplicado(pCodigo: integer; pCidade: string): string;
     function TotalDados: integer; override;
     function getCtrlEstados: TObject;
+    procedure setCtrlEstados(pCtrlEstados: TObject);
   end;
 
 implementation
@@ -35,13 +39,11 @@ implementation
 constructor CtrlCidades.CrieObj;
 begin
   aDaoCidade := DaoCidades.CrieObj;
-  aCtrlEstado := CtrlEstados.CrieObj;
 end;
 
 destructor CtrlCidades.Destrua_se;
 begin
   aDaoCidade.Destrua_se;
-  aCtrlEstado.Destrua_se;
 end;
 
 procedure CtrlCidades.Salvar(pObj: TObject);
@@ -83,6 +85,39 @@ begin
   //  Result := inherited Carregar(pPos);
 end;
 
+function CtrlCidades.Duplicado(pCodigo: integer; pCidade: string): string;
+var
+  mRes: string;
+  mPos, Code: integer;
+  mCidade: Cidades;
+begin
+  mPos := 1;
+  if pCodigo = 0 then
+  begin
+    mRes := aDaoCidade.Pesquisar(pCidade, False); //insert
+    Val(mRes, mPos, Code);
+    if code <> 0 then
+      Result := 'Erro'
+    else
+    begin
+      mPos := StrToInt(mRes);
+      if mPos = 0 then
+        Result := 'O nome já existe!'
+      else
+        Result := '';
+    end;
+  end
+  else
+  begin
+    mRes := aDaoCidade.Pesquisar(pCidade, True); //update or delete
+    mCidade := Cidades(aDaoCidade.Carregar(StrToInt(mRes)));
+    if pCodigo <> mCidade.GetCodigo then
+      Result := 'O nome já existe com o codigo = ' + IntToStr(mCidade.GetCodigo)
+    else
+      Result := '';
+  end;
+end;
+
 function CtrlCidades.TotalDados: integer;
 begin
   Result := aDaoCidade.TotalDados;
@@ -92,6 +127,11 @@ end;
 function CtrlCidades.getCtrlEstados: TObject;
 begin
   Result := aCtrlEstado;
+end;
+
+procedure CtrlCidades.setCtrlEstados(pCtrlEstados: TObject);
+begin
+  aCtrlEstado := CtrlEstados(pCtrlEstados);
 end;
 
 end.

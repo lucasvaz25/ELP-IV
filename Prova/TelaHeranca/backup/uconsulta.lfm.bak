@@ -1,0 +1,72 @@
+object Consulta: TConsulta
+  Left = 440
+  Height = 401
+  Top = 160
+  Width = 647
+  Caption = 'Consulta'
+  ClientHeight = 401
+  ClientWidth = 647
+  LCLVersion = '2.0.10.0'
+  object Btn_Pesquisar: TButton
+    Left = 400
+    Height = 25
+    Top = 22
+    Width = 75
+    Caption = '&Pesquisar'
+    OnClick = Btn_PesquisarClick
+    TabOrder = 0
+  end
+  object Btn_Novo: TButton
+    Left = 229
+    Height = 25
+    Top = 360
+    Width = 75
+    Caption = '&Novo'
+    OnClick = Btn_NovoClick
+    TabOrder = 1
+  end
+  object Btn_Alterar: TButton
+    Left = 325
+    Height = 25
+    Top = 360
+    Width = 75
+    Caption = '&Alterar'
+    OnClick = Btn_AlterarClick
+    TabOrder = 2
+  end
+  object Btn_Excluir: TButton
+    Left = 421
+    Height = 25
+    Top = 360
+    Width = 75
+    Caption = '&Excluir'
+    OnClick = Btn_ExcluirClick
+    TabOrder = 3
+  end
+  object Btn_Sair: TButton
+    Left = 517
+    Height = 25
+    Top = 359
+    Width = 75
+    Caption = 'Sai&r'
+    OnClick = Btn_SairClick
+    TabOrder = 4
+  end
+  object Edt_Chave: TEdit
+    Left = 56
+    Height = 23
+    Top = 24
+    Width = 328
+    CharCase = ecUppercase
+    MaxLength = 40
+    TabOrder = 5
+  end
+  object ListView1: TListView
+    Left = 56
+    Height = 264
+    Top = 72
+    Width = 536
+    Columns = <>
+    TabOrder = 6
+  end
+end

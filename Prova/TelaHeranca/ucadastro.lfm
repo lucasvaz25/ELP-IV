@@ -1,0 +1,64 @@
+object Cadastro: TCadastro
+  Left = 461
+  Height = 362
+  Top = 180
+  Width = 567
+  Caption = 'Cadastro Pai'
+  ClientHeight = 362
+  ClientWidth = 567
+  LCLVersion = '2.0.10.0'
+  object Edt_Codigo: TEdit
+    Left = 24
+    Height = 23
+    Top = 24
+    Width = 64
+    Enabled = False
+    MaxLength = 6
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object lblCodigo: TLabel
+    Left = 24
+    Height = 15
+    Top = 8
+    Width = 39
+    Caption = 'Código'
+    ParentColor = False
+  end
+  object Edt_DataCad: TEdit
+    Left = 24
+    Height = 23
+    Top = 312
+    Width = 80
+    Enabled = False
+    MaxLength = 10
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object lbl_DataCad: TLabel
+    Left = 27
+    Height = 15
+    Top = 296
+    Width = 51
+    Caption = 'Data Cad.'
+    ParentColor = False
+  end
+  object Btn_Salvar: TButton
+    Left = 360
+    Height = 25
+    Top = 312
+    Width = 75
+    Caption = '&Salvar'
+    OnClick = Btn_SalvarClick
+    TabOrder = 2
+  end
+  object Btn_Sair: TButton
+    Left = 472
+    Height = 25
+    Top = 312
+    Width = 75
+    Caption = 'Sai&r'
+    OnClick = Btn_SairClick
+    TabOrder = 3
+  end
+end

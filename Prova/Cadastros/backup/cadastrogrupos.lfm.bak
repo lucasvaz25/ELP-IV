@@ -1,0 +1,37 @@
+inherited CadastroGrupos: TCadastroGrupos
+  Caption = 'Cadastro Grupos'
+  object Edt_Grupo: TEdit[6]
+    Left = 24
+    Height = 23
+    Top = 80
+    Width = 509
+    CharCase = ecUppercase
+    MaxLength = 50
+    TabOrder = 4
+  end
+  object lbl_Grupo: TLabel[7]
+    Left = 24
+    Height = 15
+    Top = 61
+    Width = 36
+    Caption = 'Grupo:'
+    ParentColor = False
+  end
+  object Edt_Obs: TMemo[8]
+    Left = 24
+    Height = 122
+    Top = 144
+    Width = 509
+    CharCase = ecUppercase
+    MaxLength = 200
+    TabOrder = 5
+  end
+  object lbl_Obs: TLabel[9]
+    Left = 24
+    Height = 15
+    Top = 128
+    Width = 65
+    Caption = 'Observação:'
+    ParentColor = False
+  end
+end

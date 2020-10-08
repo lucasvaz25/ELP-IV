@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="21">
+      <Unit0>
+        <Filename Value="prova.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="3" Y="11"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="ugerente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Gerente"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uGerente"/>
+        <TopLine Value="42"/>
+        <CursorPos Y="62"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="Classes\ugrupo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UGrupo"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="91" Y="13"/>
+        <UsageCount Value="20"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="Classes\upai.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UPai"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="22"/>
+        <CursorPos X="90" Y="35"/>
+        <UsageCount Value="20"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="Classes\usubgrupo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="USubGrupo"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="10"/>
+        <CursorPos X="26" Y="26"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="TelaHeranca\ucadastro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Cadastro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCadastro"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="34"/>
+        <CursorPos X="10" Y="51"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="TelaHeranca\uconsulta.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Consulta"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UConsulta"/>
+        <EditorIndex Value="17"/>
+        <TopLine Value="18"/>
+        <CursorPos X="5" Y="30"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="Cadastros\cadastrogrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CadastroGrupos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="CadastroGrupos"/>
+        <EditorIndex Value="16"/>
+        <TopLine Value="39"/>
+        <CursorPos X="67" Y="46"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="Cadastros\ucadastrosubgrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CadastroSubGrupos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uCadastroSubGrupos"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="105"/>
+        <CursorPos X="32" Y="125"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="Consultas\uconsultagrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ConsultaGrupos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UConsultaGrupos"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="9"/>
+        <CursorPos X="46" Y="23"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="Consultas\uconsultasubgrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ConsultaSubGrupos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UConsultaSubGrupos"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="99"/>
+        <CursorPos Y="111"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="Codigo\ucolecao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UColecao"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="23" Y="21"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="Codigo\ucolecaogrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UColecaoGrupos"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="17"/>
+        <CursorPos X="17" Y="36"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="Codigo\ucolecaosubgrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UColecaoSubGrupos"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="22"/>
+        <CursorPos X="40" Y="37"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="Codigo\udao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UDao"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="16"/>
+        <CursorPos X="21" Y="18"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="Codigo\udaogrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uDaoGrupos"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="21"/>
+        <CursorPos Y="34"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="Codigo\udaosubgrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UDaoSubGrupos"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="34"/>
+        <CursorPos X="45" Y="49"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="Codigo\ucontroller.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UController"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="40"/>
+        <CursorPos X="85" Y="62"/>
+        <UsageCount Value="20"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="Codigo\ucontrollergrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uControllerGrupos"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="25"/>
+        <CursorPos Y="33"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="Codigo\ucontrollersubgrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uControllerSubGrupos"/>
+        <EditorIndex Value="12"/>
+        <CursorPos X="15" Y="13"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="Codigo\uinter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UInter"/>
+        <EditorIndex Value="15"/>
+        <TopLine Value="28"/>
+        <CursorPos X="43" Y="40"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit20>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="Codigo\uinter.pas"/>
+        <Caret Line="40" Column="43" TopLine="28"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ugerente.pas"/>
+        <Caret Line="60" Column="25" TopLine="48"/>
+      </Position2>
+      <Position3>
+        <Filename Value="prova.lpr"/>
+        <Caret Line="11" Column="3"/>
+      </Position3>
+      <Position4>
+        <Filename Value="Codigo\ucolecaogrupos.pas"/>
+        <Caret Line="128" TopLine="116"/>
+      </Position4>
+      <Position5>
+        <Filename Value="Codigo\udaogrupos.pas"/>
+        <Caret Line="39" TopLine="27"/>
+      </Position5>
+      <Position6>
+        <Filename Value="Codigo\ucolecaogrupos.pas"/>
+        <Caret Line="17" Column="16" TopLine="5"/>
+      </Position6>
+      <Position7>
+        <Filename Value="Codigo\ucolecao.pas"/>
+        <Caret Line="21" Column="23"/>
+      </Position7>
+      <Position8>
+        <Filename Value="Codigo\udaogrupos.pas"/>
+        <Caret Line="38" TopLine="27"/>
+      </Position8>
+      <Position9>
+        <Filename Value="Consultas\uconsultagrupos.pas"/>
+        <Caret Line="109" TopLine="105"/>
+      </Position9>
+      <Position10>
+        <Filename Value="Consultas\uconsultasubgrupos.pas"/>
+        <Caret Line="111" TopLine="99"/>
+      </Position10>
+      <Position11>
+        <Filename Value="Codigo\ucolecaogrupos.pas"/>
+        <Caret Line="128" Column="18" TopLine="113"/>
+      </Position11>
+      <Position12>
+        <Filename Value="Codigo\udaogrupos.pas"/>
+        <Caret Line="38" TopLine="27"/>
+      </Position12>
+      <Position13>
+        <Filename Value="Codigo\ucontrollergrupos.pas"/>
+        <Caret Line="37" TopLine="25"/>
+      </Position13>
+      <Position14>
+        <Filename Value="Codigo\udaogrupos.pas"/>
+        <Caret Line="18" Column="16" TopLine="6"/>
+      </Position14>
+      <Position15>
+        <Filename Value="ugerente.pas"/>
+        <Caret Line="59" TopLine="42"/>
+      </Position15>
+      <Position16>
+        <Filename Value="ugerente.pas"/>
+        <Caret Line="60" TopLine="42"/>
+      </Position16>
+      <Position17>
+        <Filename Value="ugerente.pas"/>
+        <Caret Line="62" TopLine="42"/>
+      </Position17>
+      <Position18>
+        <Filename Value="Codigo\ucontrollergrupos.pas"/>
+        <Caret Line="32" TopLine="25"/>
+      </Position18>
+      <Position19>
+        <Filename Value="Codigo\ucontrollergrupos.pas"/>
+        <Caret Line="33" TopLine="25"/>
+      </Position19>
+      <Position20>
+        <Filename Value="Codigo\udaogrupos.pas"/>
+        <Caret Line="33" TopLine="21"/>
+      </Position20>
+      <Position21>
+        <Filename Value="Codigo\udaogrupos.pas"/>
+        <Caret Line="34" TopLine="21"/>
+      </Position21>
+      <Position22>
+        <Filename Value="Codigo\ucolecaogrupos.pas"/>
+        <Caret Line="29" TopLine="17"/>
+      </Position22>
+      <Position23>
+        <Filename Value="Codigo\ucolecaogrupos.pas"/>
+        <Caret Line="30" TopLine="17"/>
+      </Position23>
+      <Position24>
+        <Filename Value="Codigo\ucolecaogrupos.pas"/>
+        <Caret Line="31" TopLine="17"/>
+      </Position24>
+      <Position25>
+        <Filename Value="Codigo\ucolecaogrupos.pas"/>
+        <Caret Line="125" TopLine="113"/>
+      </Position25>
+      <Position26>
+        <Filename Value="Codigo\ucolecaogrupos.pas"/>
+        <Caret Line="126" TopLine="113"/>
+      </Position26>
+      <Position27>
+        <Filename Value="Codigo\ucolecaogrupos.pas"/>
+        <Caret Line="127" TopLine="113"/>
+      </Position27>
+      <Position28>
+        <Filename Value="Codigo\ucolecaosubgrupos.pas"/>
+        <Caret Line="37" Column="40" TopLine="22"/>
+      </Position28>
+      <Position29>
+        <Filename Value="ugerente.pas"/>
+        <Caret Line="62" TopLine="42"/>
+      </Position29>
+      <Position30>
+        <Filename Value="TelaHeranca\ucadastro.pas"/>
+        <Caret Line="56" TopLine="34"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="2">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ugerente.pas"/>
+        <Line Value="62"/>
+      </Item1>
+      <Item2>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="Cadastros\cadastrogrupos.pas"/>
+        <Line Value="55"/>
+      </Item2>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>

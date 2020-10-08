@@ -1,0 +1,29 @@
+inherited ConsultaGrupos: TConsultaGrupos
+  Width = 662
+  Caption = 'Consulta Grupos'
+  ClientWidth = 662
+  inherited ListView1: TListView
+    Width = 592
+    Checkboxes = True
+    Columns = <    
+      item
+        Caption = 'Código'
+        Width = 60
+      end    
+      item
+        Caption = 'Grupo'
+        Width = 150
+      end    
+      item
+        Caption = 'Obs.'
+        Width = 300
+      end    
+      item
+        Caption = 'Data Cad.'
+        Width = 80
+      end>
+    GridLines = True
+    RowSelect = True
+    ViewStyle = vsReport
+  end
+end

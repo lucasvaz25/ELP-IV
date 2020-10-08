@@ -1,0 +1,57 @@
+inherited CadastroSubGrupos: TCadastroSubGrupos
+  Left = 463
+  Top = 206
+  Caption = 'Cadastro Sub_Grupos'
+  object Edt_SubGrupo: TEdit[6]
+    Left = 24
+    Height = 23
+    Top = 72
+    Width = 520
+    CharCase = ecUppercase
+    MaxLength = 50
+    TabOrder = 4
+  end
+  object lbl_SubGrupo: TLabel[7]
+    Left = 24
+    Height = 15
+    Top = 56
+    Width = 58
+    Caption = 'Sub-Grupo'
+    ParentColor = False
+  end
+  object edt_Obs: TMemo[8]
+    Left = 24
+    Height = 90
+    Top = 120
+    Width = 520
+    CharCase = ecUppercase
+    MaxLength = 200
+    TabOrder = 5
+  end
+  object Label1: TLabel[9]
+    Left = 24
+    Height = 15
+    Top = 104
+    Width = 65
+    Caption = 'Observação:'
+    ParentColor = False
+  end
+  object edt_Grupo: TEdit[10]
+    Left = 27
+    Height = 23
+    Top = 232
+    Width = 421
+    CharCase = ecUppercase
+    MaxLength = 50
+    TabOrder = 6
+  end
+  object btn_pesquisar: TButton[11]
+    Left = 469
+    Height = 25
+    Top = 230
+    Width = 75
+    Caption = '&Pesquisar'
+    OnClick = btn_pesquisarClick
+    TabOrder = 7
+  end
+end

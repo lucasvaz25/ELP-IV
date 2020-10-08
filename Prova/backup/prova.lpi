@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="prova"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0"/>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="21">
+      <Unit0>
+        <Filename Value="prova.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="ugerente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Gerente"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uGerente"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="Classes\ugrupo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UGrupo"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="Classes\upai.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UPai"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="Classes\usubgrupo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="USubGrupo"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="TelaHeranca\ucadastro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Cadastro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCadastro"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="TelaHeranca\uconsulta.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Consulta"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UConsulta"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="Cadastros\cadastrogrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CadastroGrupos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="CadastroGrupos"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="Cadastros\ucadastrosubgrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CadastroSubGrupos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uCadastroSubGrupos"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="Consultas\uconsultagrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ConsultaGrupos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UConsultaGrupos"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="Consultas\uconsultasubgrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ConsultaSubGrupos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UConsultaSubGrupos"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="Codigo\ucolecao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UColecao"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="Codigo\ucolecaogrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UColecaoGrupos"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="Codigo\ucolecaosubgrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UColecaoSubGrupos"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="Codigo\udao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UDao"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="Codigo\udaogrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uDaoGrupos"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="Codigo\udaosubgrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UDaoSubGrupos"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="Codigo\ucontroller.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UController"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="Codigo\ucontrollergrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uControllerGrupos"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="Codigo\ucontrollersubgrupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uControllerSubGrupos"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="Codigo\uinter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UInter"/>
+      </Unit20>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="prova"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="Classes;TelaHeranca;Cadastros;Consultas;Codigo"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

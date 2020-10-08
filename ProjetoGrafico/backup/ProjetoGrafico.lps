@@ -11,7 +11,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="5"/>
         <CursorPos X="16" Y="12"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
       </Unit0>
       <Unit1>
         <Filename Value="ugerente.pas"/>
@@ -22,7 +22,7 @@
         <UnitName Value="uGerente"/>
         <TopLine Value="31"/>
         <CursorPos X="35" Y="41"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -36,7 +36,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="26"/>
         <CursorPos X="15" Y="37"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
       </Unit2>
       <Unit3>
         <Filename Value="TelaHeranca\ucadastro.pas"/>
@@ -48,7 +48,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="27"/>
         <CursorPos X="15" Y="27"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
       </Unit3>
       <Unit4>
         <Filename Value="Telas\uconsultapaises.pas"/>
@@ -60,7 +60,7 @@
         <EditorIndex Value="6"/>
         <TopLine Value="64"/>
         <CursorPos Y="70"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -73,7 +73,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="42"/>
         <CursorPos Y="142"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -86,7 +86,7 @@
         <EditorIndex Value="7"/>
         <TopLine Value="66"/>
         <CursorPos X="34" Y="78"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit6>
@@ -100,7 +100,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="118"/>
         <CursorPos X="25" Y="61"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
       </Unit7>
       <Unit8>
         <Filename Value="Telas\ucadastroestados.pas"/>
@@ -112,7 +112,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="48"/>
         <CursorPos X="69" Y="43"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -125,7 +125,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="115"/>
         <CursorPos X="12" Y="101"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
       </Unit9>
       <Unit10>
         <Filename Value="Codigo\uinter.pas"/>
@@ -134,7 +134,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="38"/>
         <CursorPos X="3" Y="16"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
@@ -144,7 +144,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="31"/>
         <CursorPos Y="55"/>
-        <UsageCount Value="147"/>
+        <UsageCount Value="148"/>
       </Unit11>
       <Unit12>
         <Filename Value="Codigo\upaises.pas"/>
@@ -153,7 +153,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="9"/>
         <CursorPos Y="76"/>
-        <UsageCount Value="147"/>
+        <UsageCount Value="148"/>
       </Unit12>
       <Unit13>
         <Filename Value="Codigo\uestados.pas"/>
@@ -162,7 +162,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="24"/>
         <CursorPos Y="44"/>
-        <UsageCount Value="146"/>
+        <UsageCount Value="147"/>
       </Unit13>
       <Unit14>
         <Filename Value="Codigo\ucidades.pas"/>
@@ -171,47 +171,46 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="15"/>
         <CursorPos X="23" Y="62"/>
-        <UsageCount Value="146"/>
+        <UsageCount Value="147"/>
       </Unit14>
       <Unit15>
         <Filename Value="Codigo\ucolecao.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uColecao"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="29"/>
         <CursorPos X="14" Y="29"/>
-        <UsageCount Value="144"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="145"/>
       </Unit15>
       <Unit16>
         <Filename Value="Codigo\ucolecaopaises.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uColecaoPaises"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="12"/>
         <TopLine Value="19"/>
         <CursorPos X="35" Y="136"/>
-        <UsageCount Value="143"/>
+        <UsageCount Value="144"/>
         <Loaded Value="True"/>
       </Unit16>
       <Unit17>
         <Filename Value="Codigo\ucolecaoestados.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uColecaoEstados"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="115"/>
-        <CursorPos Y="130"/>
-        <UsageCount Value="136"/>
+        <TopLine Value="106"/>
+        <CursorPos X="59" Y="125"/>
+        <UsageCount Value="137"/>
         <Loaded Value="True"/>
       </Unit17>
       <Unit18>
         <Filename Value="Codigo\ucolecaocidades.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uColecaoCidades"/>
-        <EditorIndex Value="15"/>
-        <TopLine Value="22"/>
-        <CursorPos X="41" Y="129"/>
-        <UsageCount Value="136"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="108"/>
+        <CursorPos X="35" Y="119"/>
+        <UsageCount Value="137"/>
         <Loaded Value="True"/>
       </Unit18>
       <Unit19>
@@ -221,7 +220,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="15"/>
         <CursorPos X="16" Y="21"/>
-        <UsageCount Value="127"/>
+        <UsageCount Value="128"/>
       </Unit19>
       <Unit20>
         <Filename Value="Codigo\udao.pas"/>
@@ -230,27 +229,26 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="12"/>
         <CursorPos X="16" Y="22"/>
-        <UsageCount Value="127"/>
+        <UsageCount Value="128"/>
       </Unit20>
       <Unit21>
         <Filename Value="Codigo\udaopaises.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uDaoPaises"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="10"/>
         <TopLine Value="52"/>
         <CursorPos X="14" Y="25"/>
-        <UsageCount Value="126"/>
+        <UsageCount Value="127"/>
         <Loaded Value="True"/>
       </Unit21>
       <Unit22>
         <Filename Value="Codigo\ucontrollerpaises.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uControllerPaises"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="17"/>
         <CursorPos X="14" Y="25"/>
-        <UsageCount Value="123"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="124"/>
       </Unit22>
       <Unit23>
         <Filename Value="Codigo\udaoestados.pas"/>
@@ -259,7 +257,7 @@
         <EditorIndex Value="8"/>
         <TopLine Value="37"/>
         <CursorPos Y="40"/>
-        <UsageCount Value="120"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
       </Unit23>
       <Unit24>
@@ -269,7 +267,7 @@
         <EditorIndex Value="4"/>
         <TopLine Value="88"/>
         <CursorPos Y="46"/>
-        <UsageCount Value="118"/>
+        <UsageCount Value="119"/>
         <Loaded Value="True"/>
       </Unit24>
       <Unit25>
@@ -279,17 +277,17 @@
         <EditorIndex Value="5"/>
         <TopLine Value="110"/>
         <CursorPos Y="123"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="96"/>
         <Loaded Value="True"/>
       </Unit25>
       <Unit26>
         <Filename Value="Codigo\udaocidades.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uDaoCidades"/>
-        <EditorIndex Value="12"/>
-        <TopLine Value="25"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="73"/>
         <CursorPos X="17" Y="19"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="96"/>
         <Loaded Value="True"/>
       </Unit26>
       <Unit27>

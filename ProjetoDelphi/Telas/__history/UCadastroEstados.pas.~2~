@@ -1,0 +1,36 @@
+unit UCadastroEstados;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  UCadastro,
+  Vcl.StdCtrls,
+  Vcl.ExtCtrls,
+  Uestados,
+  UControllerEstados;
+
+type
+  TCadastroEstados = class( TCadastro )
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  CadastroEstados: TCadastroEstados;
+
+implementation
+
+{$R *.dfm}
+
+end.

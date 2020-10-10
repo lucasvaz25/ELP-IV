@@ -1,0 +1,5 @@
+inherited CadastroEstados: TCadastroEstados
+  Caption = 'Cadastro Estados'
+  PixelsPerInch = 96
+  TextHeight = 13
+end

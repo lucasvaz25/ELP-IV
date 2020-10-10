@@ -1,0 +1,18 @@
+unit UControllerPaises;
+
+interface
+
+uses
+  UController;
+
+type
+  ControllerPaises = class( Controller )
+  private
+  protected
+  public
+
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,82 @@
+unit UGerente;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.Menus,
+  Vcl.ExtCtrls,
+  UControllerPaises,
+  UControllerEstados,
+  UControllerCidades,
+  Upaises,
+  Uestados,
+  Ucidades,
+  Uinter;
+
+type
+  TGerente = class( TForm )
+    MainMenu1: TMainMenu;
+    Cadastros1: TMenuItem;
+    Paises1: TMenuItem;
+    Estados1: TMenuItem;
+    Cidades1: TMenuItem;
+    N1: TMenuItem;
+    Sair1: TMenuItem;
+    Panel1: TPanel;
+    procedure Sair1Click( Sender: TObject );
+    procedure FormCreate( Sender: TObject );
+    procedure FormDestroy( Sender: TObject );
+  private
+    { Private declarations }
+    AInter: Inter;
+    OPais: Paises;
+    OEstado: Estados;
+    ACidade: Cidades;
+
+    ActrlPais: ControllerPaises;
+    ACtrlEstado: ControllerEstados;
+    ACtrlCidade: ControllerCidades;
+  public
+    { Public declarations }
+  end;
+
+var
+  Gerente: TGerente;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TGerente.FormCreate( Sender: TObject );
+begin
+  AInter  := Inter.Create;
+  OPais   := Paises.Create;
+  OEstado := Estados.Create;
+  ACidade := Cidades.Create;
+
+end;
+
+procedure TGerente.FormDestroy( Sender: TObject );
+begin
+  Ainter.Destrua_se;
+  OPais.Destrua_se;
+  OEstado.Destrua_se;
+  ACidade.Destrua_se;
+end;
+
+procedure TGerente.Sair1Click( Sender: TObject );
+begin
+  Close;
+end;
+
+end.

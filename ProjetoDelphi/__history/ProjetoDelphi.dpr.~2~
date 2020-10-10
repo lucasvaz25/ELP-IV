@@ -1,0 +1,16 @@
+program ProjetoDelphi;
+
+uses
+  Vcl.Forms,
+  UGerente in 'UGerente.pas' {Gerente},
+  UConsulta in 'TelaHeranca\UConsulta.pas' {Consulta};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TGerente, Gerente);
+  Application.CreateForm(TConsulta, Consulta);
+  Application.Run;
+end.

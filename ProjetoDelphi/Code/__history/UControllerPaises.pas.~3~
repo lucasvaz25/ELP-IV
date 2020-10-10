@@ -1,0 +1,24 @@
+unit UControllerPaises;
+
+interface
+
+uses
+  UController;
+
+type
+  ControllerPaises = class( Controller )
+  private
+  protected
+  public
+    constructor CrieObj; override;
+    destructor Destrua_se; override;
+
+    procedure Salvar( PObj: Tobject ); override;
+    procedure Excluir( PObj: TObject ); override;
+    function Pesquisar( PChave: String ): string; override;
+    function Carregar( PObj: TObject ): string; override;
+  end;
+
+implementation
+
+end.

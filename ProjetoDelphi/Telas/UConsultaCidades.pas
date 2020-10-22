@@ -18,7 +18,10 @@ uses
   Vcl.ExtCtrls,
   UCadastroCidades,
   UControllerCidades,
-  Ucidades;
+  Ucidades,
+  Data.DB,
+  Vcl.Grids,
+  Vcl.DBGrids;
 
 type
   TConsultaCidades = class( TConsulta )
@@ -36,7 +39,7 @@ type
     procedure Pesquisar; Override;
     procedure SetFormCadastro( PObj: TObject ); Override;
     procedure ConhecaObj( PObj: TObject; PCtrl: TObject ); Override;
-    function Selecionar: TObject;
+    // function Selecionar: TObject;
     function RetornaObj: TObject; Override;
   end;
 
@@ -52,7 +55,11 @@ implementation
 procedure TConsultaCidades.Alterar;
 begin
   inherited;
-
+  ACtrlCidade.Carregar( ACidade );
+  OCadastroCidade.ConhecaObj( ACidade, ACtrlCidade );
+  OCadastroCidade.LimparEdt;
+  OCadastroCidade.CarregaEdt;
+  OCadastroCidade.ShowModal;
 end;
 
 procedure TConsultaCidades.ConhecaObj( PObj, PCtrl: TObject );
@@ -63,15 +70,29 @@ begin
 end;
 
 procedure TConsultaCidades.Excluir;
+var
+  Aux: string;
 begin
   inherited;
-
+  ACtrlCidade.Carregar( ACidade );
+  OCadastroCidade.ConhecaObj( ACidade, ACtrlCidade );
+  OCadastroCidade.LimparEdt;
+  OCadastroCidade.CarregaEdt;
+  OCadastroCidade.BloqueiEdt;
+  Aux                               := OCadastroCidade.BtnSalvar.Caption;
+  OCadastroCidade.BtnSalvar.Caption := 'Excluir';
+  OCadastroCidade.ShowModal;
+  OCadastroCidade.BtnSalvar.Caption := Aux;
+  OCadastroCidade.DesbloqueiaEdt;
+  OCadastroCidade.ShowModal;
 end;
 
 procedure TConsultaCidades.Novo;
 begin
+  ACidade.SetCodigo( 0 );
   OCadastroCidade.ConhecaObj( ACidade, ACtrlCidade );
   OCadastroCidade.LimparEdt;
+  OCadastroCidade.CarregaEdt;
   OCadastroCidade.ShowModal;
   inherited;
 end;
@@ -93,10 +114,10 @@ begin
 
 end;
 
-function TConsultaCidades.Selecionar: TObject;
-begin
-
-end;
+// function TConsultaCidades.Selecionar: TObject;
+// begin
+//
+// end;
 
 procedure TConsultaCidades.SetFormCadastro( PObj: TObject );
 begin

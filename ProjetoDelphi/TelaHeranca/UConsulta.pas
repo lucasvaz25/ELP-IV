@@ -14,7 +14,7 @@ uses
   Vcl.Dialogs,
   Vcl.ExtCtrls,
   Vcl.StdCtrls,
-  Vcl.ComCtrls;
+  Vcl.ComCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids;
 
 type
   TConsulta = class( TForm )
@@ -25,7 +25,7 @@ type
     BtnAlterar: TButton;
     BtnExcluir: TButton;
     BtnSair: TButton;
-    ListView1: TListView;
+    DBGrid1: TDBGrid;
     procedure BtnSairClick( Sender: TObject );
     procedure BtnPesquisarClick( Sender: TObject );
     procedure BtnNovoClick( Sender: TObject );

@@ -3,7 +3,6 @@ inherited CadastroEstados: TCadastroEstados
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
-    ExplicitLeft = 8
     object Label1: TLabel [0]
       Left = 24
       Top = 75
@@ -67,6 +66,7 @@ inherited CadastroEstados: TCadastroEstados
       Height = 25
       Caption = 'Pesquisar'
       TabOrder = 8
+      OnClick = btnPesquisarPaisClick
     end
   end
 end

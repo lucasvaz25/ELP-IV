@@ -1,0 +1,25 @@
+unit uDAO;
+
+interface
+
+uses
+  Data.DB;
+
+type
+  DAO = class
+  private
+  protected
+  public
+    constructor CrieObj; virtual;
+    destructor Destrua_se; virtual;
+
+    procedure Salvar( PObj: Tobject ); virtual;
+    procedure Excluir( PObj: TObject ); virtual;
+    function Pesquisar( PChave: String ): string; virtual;
+    function Carregar( PObj: TObject ): string; virtual;
+    function GetDS: TDataSource; virtual;
+  end;
+
+implementation
+
+end.

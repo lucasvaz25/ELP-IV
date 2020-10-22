@@ -3,7 +3,8 @@ unit UControllerPaises;
 interface
 
 uses
-  UController;
+  UController,
+  Data.DB;
 
 type
   ControllerPaises = class( Controller )
@@ -17,13 +18,14 @@ type
     procedure Excluir( PObj: TObject ); override;
     function Pesquisar( PChave: String ): string; override;
     function Carregar( PObj: TObject ): string; override;
+    function GetDS: TDataSource; override;
   end;
 
 implementation
 
 { ControllerPaises }
 
-function ControllerPaises.Carregar(PObj: TObject): string;
+function ControllerPaises.Carregar( PObj: TObject ): string;
 begin
 
 end;
@@ -40,18 +42,23 @@ begin
   inherited;
 end;
 
-procedure ControllerPaises.Excluir(PObj: TObject);
+procedure ControllerPaises.Excluir( PObj: TObject );
 begin
   inherited;
 
 end;
 
-function ControllerPaises.Pesquisar(PChave: String): string;
+function ControllerPaises.GetDS: TDataSource;
 begin
 
 end;
 
-procedure ControllerPaises.Salvar(PObj: Tobject);
+function ControllerPaises.Pesquisar( PChave: String ): string;
+begin
+
+end;
+
+procedure ControllerPaises.Salvar( PObj: Tobject );
 begin
   inherited;
 

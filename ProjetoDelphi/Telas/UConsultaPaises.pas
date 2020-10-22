@@ -18,7 +18,10 @@ uses
   Vcl.ExtCtrls,
   UCadastroPaises,
   UControllerPaises,
-  Upaises;
+  Upaises,
+  Data.DB,
+  Vcl.Grids,
+  Vcl.DBGrids;
 
 type
   TConsultaPaises = class( TConsulta )
@@ -36,7 +39,7 @@ type
     procedure Pesquisar; Override;
     procedure SetFormCadastro( PObj: TObject ); Override;
     procedure ConhecaObj( PObj: TObject; PCtrl: TObject ); Override;
-    function Selecionar: TObject;
+    // function Selecionar: TObject;
     function RetornaObj: TObject; Override;
   end;
 
@@ -51,7 +54,7 @@ implementation
 
 procedure TConsultaPaises.Alterar;
 begin
-  OPais := Paises( ACtrlPais.Carregar( Self.Selecionar ) );
+  ACtrlPais.Carregar( Self.OPais );
   OCadastroPaises.ConhecaObj( OPais, ACtrlPais );
   OCadastroPaises.LimparEdt;
   OCadastroPaises.CarregaEdt;
@@ -71,7 +74,7 @@ procedure TConsultaPaises.Excluir;
 var
   Aux: string;
 begin
-  OPais := Paises( ACtrlPais.Carregar( Self.Selecionar ) );
+  ACtrlPais.Carregar( Self.OPais );
   OCadastroPaises.ConhecaObj( OPais, ACtrlPais );
   OCadastroPaises.LimparEdt;
   OCadastroPaises.CarregaEdt;
@@ -87,8 +90,10 @@ end;
 
 procedure TConsultaPaises.Novo;
 begin
+  OPais.SetCodigo( 0 );
   OCadastroPaises.ConhecaObj( OPais, ACtrlPais );
   OCadastroPaises.LimparEdt;
+  OCadastroPaises.CarregaEdt;
   OCadastroPaises.ShowModal;
   inherited;
 
@@ -102,8 +107,7 @@ end;
 
 function TConsultaPaises.RetornaObj: TObject;
 begin
-  OPais  := Paises( ACtrlPais.Carregar( Self.Selecionar ) );
-  Result := OPais.Clone;
+
 end;
 
 procedure TConsultaPaises.Sair;
@@ -112,10 +116,10 @@ begin
 
 end;
 
-function TConsultaPaises.Selecionar: TObject;
-begin
-
-end;
+// function TConsultaPaises.Selecionar: TObject;
+// begin
+//
+// end;
 
 procedure TConsultaPaises.SetFormCadastro( PObj: TObject );
 begin

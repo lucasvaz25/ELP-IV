@@ -3,8 +3,6 @@ inherited CadastroPaises: TCadastroPaises
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
-    ExplicitLeft = 72
-    ExplicitTop = 16
     object lblPais: TLabel [0]
       Left = 24
       Top = 74

@@ -3,7 +3,8 @@ unit UControllerCidades;
 interface
 
 uses
-  UController;
+  UController,
+  Data.DB;
 
 type
   ControllerCidades = class( Controller )
@@ -17,6 +18,7 @@ type
     procedure Excluir( PObj: TObject ); override;
     function Pesquisar( PChave: String ): string; override;
     function Carregar( PObj: TObject ): string; override;
+    function GetDS: TDataSource; override;
   end;
 
 implementation
@@ -43,6 +45,11 @@ end;
 procedure ControllerCidades.Excluir( PObj: TObject );
 begin
   inherited;
+
+end;
+
+function ControllerCidades.GetDS: TDataSource;
+begin
 
 end;
 

@@ -20,12 +20,12 @@ uses
 
 type
   TCadastroPaises = class( TCadastro )
-    edtPais: TEdit;
-    edtSigla: TEdit;
-    edtDDI: TEdit;
-    lblPais: TLabel;
-    lblDDI: TLabel;
-    lblSigla: TLabel;
+    EdtPais: TEdit;
+    EdtSigla: TEdit;
+    EdtDDI: TEdit;
+    LblPais: TLabel;
+    LblDDI: TLabel;
+    LblSigla: TLabel;
   private
     { Private declarations }
   protected
@@ -54,31 +54,43 @@ implementation
 procedure TCadastroPaises.BloqueiEdt;
 begin
   inherited;
+  Self.EdtPais.Enabled  := False;
+  Self.EdtSigla.Enabled := False;
+  Self.EdtDDI.Enabled   := False;
 
 end;
 
 procedure TCadastroPaises.CarregaEdt;
 begin
   inherited;
-
+  Self.EdtCodigo.Text  := IntToStr( Opais.GetCodigo );
+  Self.EdtPais.Text    := Opais.GetPais;
+  Self.EdtSigla.Text   := Opais.GetSigla;
+  Self.EdtDDI.Text     := Opais.GetDDI;
+  Self.EdtDataCad.Text := Opais.GetDataCad;
 end;
 
-procedure TCadastroPaises.ConhecaObj(PObj, PCtrl: TObject);
+procedure TCadastroPaises.ConhecaObj( PObj, PCtrl: TObject );
 begin
   inherited;
-
+  Opais     := Paises( PObj );
+  ACtrlPais := ControllerPaises( PCtrl );
 end;
 
 procedure TCadastroPaises.DesbloqueiaEdt;
 begin
   inherited;
-
+  Self.EdtPais.Enabled  := True;
+  Self.EdtSigla.Enabled := True;
+  Self.EdtDDI.Enabled   := True;
 end;
 
 procedure TCadastroPaises.LimparEdt;
 begin
   inherited;
-
+  Self.EdtPais.Clear;
+  Self.EdtSigla.Clear;
+  Self.EdtDDI.Clear;
 end;
 
 procedure TCadastroPaises.Sair;
@@ -90,7 +102,28 @@ end;
 procedure TCadastroPaises.Salvar;
 begin
   inherited;
-
+  if EdtPais.Text = EmptyStr then
+  begin
+    ShowMessage( 'Campo País é Obrigatório!!' );
+    EdtPais.SetFocus;
+  end
+  else if EdtSigla.Text = EmptyStr then
+  begin
+    ShowMessage( 'Campo Sigla é obrigatório!!' );
+    EdtSigla.SetFocus;
+  end
+  else
+  begin
+    with Opais do
+    begin
+      SetCodigo( StrToInt( EdtCodigo.Text ) );
+      SetPais( EdtPais.Text );
+      SetSigla( EdtSigla.Text );
+      SetDDI( EdtDDI.Text );
+      SetDataCad( EdtDataCad.Text );
+      ACtrlPais.Salvar( Clone );
+    end;
+  end;
 end;
 
 end.

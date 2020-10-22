@@ -77,7 +77,8 @@ end;
 
 procedure TCadastro.LimparEdt;
 begin
-  Self.EdtCodigo.Text := '0';
+  Self.EdtCodigo.Text  := '0';
+  Self.EdtDataCad.Text := DateToStr( Now );
 end;
 
 procedure TCadastro.Sair;

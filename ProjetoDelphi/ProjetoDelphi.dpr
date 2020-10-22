@@ -19,7 +19,10 @@ uses
   UController in 'Code\UController.pas',
   UControllerPaises in 'Code\UControllerPaises.pas',
   UControllerEstados in 'Code\UControllerEstados.pas',
-  UControllerCidades in 'Code\UControllerCidades.pas';
+  UControllerCidades in 'Code\UControllerCidades.pas',
+  uDM in 'uDM.pas' {DM: TDataModule},
+  uDAO in 'Code\uDAO.pas',
+  uDaoPaises in 'Code\uDaoPaises.pas';
 
 {$R *.res}
 
@@ -27,5 +30,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TGerente, Gerente);
+  Application.CreateForm(TDM, DM);
   Application.Run;
 end.
